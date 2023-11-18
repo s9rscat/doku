@@ -1,0 +1,928 @@
+"use strict";
+
+// Constants
+const DAY_MILLISECONDS = 86400000;
+const MAX_FRIEND_USAGE = 1;
+
+// Generic helpers
+function randomIntFromInterval(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function getRandomItem(arr) {
+  const i = randomIntFromInterval(0, arr.length - 1);
+  return arr[i];
+}
+
+function getToday() {
+  const now = new Date().getTime();
+  return now - (now % DAY_MILLISECONDS);
+}
+
+// Data
+const friendAttributes = [
+  { id: 1, name: "type1", model: "types" },
+  { id: 2, name: "type2", model: "types" },
+  { id: 3, name: "generation", model: "generations" },
+  { id: 4, name: "hair", model: "hairs" },
+  { id: 5, name: "beard", model: "beards" },
+  { id: 6, name: "house", model: "houses" },
+  { id: 7, name: "engagement", model: "engagements" },
+];
+
+const types = [
+  { id: 1, name: "Buio" },
+  { id: 2, name: "Lotta" },
+  { id: 3, name: "Roccia" },
+  { id: 4, name: "Volante" },
+  { id: 5, name: "Erba" },
+  { id: 6, name: "Normale" },
+  { id: 7, name: "Psico" },
+];
+
+const generations = [
+  { id: 1, name: "Prima generazione (1994)" },
+  { id: 2, name: "Seconda generazione (1995)" },
+  { id: 3, name: "Terza generazione (1996)" },
+  { id: 4, name: "Quarta generazione (1997)" },
+  { id: 5, name: "Quinta generazione (1998)" },
+  { id: 6, name: "Fossile (< 1994)" },
+  { id: 7, name: "Futuristico (> 1998)" },
+];
+
+const hairs = [
+  { id: 1, name: "Capelli biondi" },
+  { id: 2, name: "Capelli castani" },
+  { id: 3, name: "Capelli neri" },
+  { id: 4, name: "Capelli rossi" },
+];
+
+const beards = [
+  { id: 1, name: "Ha la barba" },
+  { id: 2, name: "Non ha la barba" },
+];
+
+const houses = [
+  { id: 1, name: "Ha una casa propria" },
+  { id: 2, name: "Non ha una casa propria" },
+];
+
+const engagements = [
+  { id: 1, name: "Fidanzat*" },
+  { id: 2, name: "Non fidanzat*" },
+];
+
+const friends = [
+  {
+    id: 1,
+    name: "Irene",
+    type1: 5,
+    type2: 6,
+    generation: 4,
+    hair: 3,
+    beard: 2,
+    house: 2,
+    engagement: 1,
+  },
+  {
+    id: 2,
+    name: "Mirco",
+    type1: 1,
+    type2: 7,
+    generation: 1,
+    hair: 2,
+    beard: 1,
+    house: 2,
+    engagement: 1,
+  },
+  {
+    id: 3,
+    name: "Paul",
+    type1: 2,
+    type2: 3,
+    generation: 5,
+    hair: 3,
+    beard: 2,
+    house: 2,
+    engagement: 2,
+  },
+  {
+    id: 4,
+    name: "Beps",
+    type1: 3,
+    type2: 4,
+    generation: 2,
+    hair: 3,
+    beard: 2,
+    house: 2,
+    engagement: 2,
+  },
+  {
+    id: 5,
+    name: "Viga",
+    type1: 3,
+    type2: 7,
+    generation: 2,
+    hair: 2,
+    beard: 2,
+    house: 1,
+    engagement: 2,
+  },
+  {
+    id: 6,
+    name: "Cava",
+    type1: 6,
+    type2: 7,
+    generation: 1,
+    hair: 2,
+    beard: 2,
+    house: 2,
+    engagement: 2,
+  },
+  {
+    id: 7,
+    name: "Mazi",
+    type1: 1,
+    type2: 2,
+    generation: 1,
+    hair: 3,
+    beard: 2,
+    house: 2,
+    engagement: 2,
+  },
+  {
+    id: 8,
+    name: "Boss",
+    type1: 1,
+    type2: 5,
+    generation: 1,
+    hair: 3,
+    beard: 1,
+    house: 1,
+    engagement: 1,
+  },
+  {
+    id: 9,
+    name: "Quod",
+    type1: 3,
+    type2: 4,
+    generation: 3,
+    hair: 2,
+    beard: 2,
+    house: 2,
+    engagement: 2,
+  },
+  {
+    id: 10,
+    name: "Dago",
+    type1: 2,
+    type2: 3,
+    generation: 5,
+    hair: 2,
+    beard: 2,
+    house: 2,
+    engagement: 1,
+  },
+  {
+    id: 11,
+    name: "Waldo",
+    type1: 1,
+    type2: 2,
+    generation: 2,
+    hair: 3,
+    beard: 2,
+    house: 1,
+    engagement: 2,
+  },
+  {
+    id: 12,
+    name: "Vero",
+    type1: 3,
+    type2: 5,
+    generation: 3,
+    hair: 2,
+    beard: 2,
+    house: 2,
+    engagement: 1,
+  },
+  {
+    id: 13,
+    name: "Sara",
+    type1: 5,
+    type2: 7,
+    generation: 3,
+    hair: 3,
+    beard: 2,
+    house: 2,
+    engagement: 1,
+  },
+  {
+    id: 14,
+    name: "Giuli",
+    type1: 6,
+    type2: 7,
+    generation: 3,
+    hair: 1,
+    beard: 2,
+    house: 2,
+    engagement: 1,
+  },
+  {
+    id: 15,
+    name: "Marti",
+    type1: 6,
+    type2: 7,
+    generation: 1,
+    hair: 2,
+    beard: 2,
+    house: 2,
+    engagement: 2,
+  },
+  {
+    id: 16,
+    name: "Noe",
+    type1: 4,
+    type2: 7,
+    generation: 2,
+    hair: 2,
+    beard: 2,
+    house: 1,
+    engagement: 1,
+  },
+  {
+    id: 17,
+    name: "Max",
+    type1: 6,
+    type2: 2,
+    generation: 4,
+    hair: 3,
+    beard: 1,
+    house: 2,
+    engagement: 2,
+  },
+  {
+    id: 18,
+    name: "Freank",
+    type1: 1,
+    type2: 5,
+    generation: 3,
+    hair: 2,
+    beard: 2,
+    house: 2,
+    engagement: 2,
+  },
+  {
+    id: 19,
+    name: "Michi",
+    type1: 3,
+    type2: 5,
+    generation: 4,
+    hair: 1,
+    beard: 2,
+    house: 2,
+    engagement: 1,
+  },
+  {
+    id: 19,
+    name: "Sem",
+    type1: 5,
+    type2: 6,
+    generation: 3,
+    hair: 1,
+    beard: 2,
+    house: 2,
+    engagement: 2,
+  },
+  {
+    id: 21,
+    name: "Claudia",
+    type1: 1,
+    type2: 6,
+    generation: 4,
+    hair: 1,
+    beard: 2,
+    house: 2,
+    engagement: 2,
+  },
+];
+
+const data = {
+  friendAttributes,
+  types,
+  generations,
+  hairs,
+  beards,
+  houses,
+  engagements,
+  friends,
+};
+
+// Friend repository
+function getFriendById(id) {
+  return friends.find((friend) => friend.id === id);
+}
+
+function getFriendByName(name) {
+  return friends.find((friend) => friend.name === name);
+}
+
+// Generation repository
+function getGenerationById(id) {
+  return generations.find((generation) => generation.id === id);
+}
+
+// Type repository
+function getTypeById(id) {
+  return types.find((type) => type.id === id);
+}
+
+// Beard repository
+function getBeardById(id) {
+  return beards.find((beard) => beard.id === id);
+}
+
+// Hair repository
+function getHairById(id) {
+  return hairs.find((hair) => hair.id === id);
+}
+
+// House repository
+function getHouseById(id) {
+  return houses.find((house) => house.id === id);
+}
+
+// Engagement repository
+function getEngagementById(id) {
+  return engagements.find((engagement) => engagement.id === id);
+}
+
+// Mappers
+const mapAttributesOnRepo = {
+  1: getTypeById,
+  2: getTypeById,
+  3: getGenerationById,
+  4: getHairById,
+  5: getBeardById,
+  6: getHouseById,
+  7: getEngagementById,
+};
+
+// States creation
+function getGameState() {
+  return JSON.parse(localStorage.getItem("game-state"));
+}
+
+function setGameState(gameState) {
+  return localStorage.setItem("game-state", JSON.stringify(gameState));
+}
+
+function getFrame() {
+  // Create a copy of the friend attributes
+  const possibleAttributes = [...friendAttributes];
+  const numPossibleAttributes = possibleAttributes.length;
+
+  // Get six random attributes (duplicates are allowed on the same row/column only)
+  const rowAttributes = [];
+  const colAttributes = [];
+
+  // Get 3 random attributes for the external row
+  for (let r = 0; r < 3; r++) {
+    const random = randomIntFromInterval(0, numPossibleAttributes - 1);
+    rowAttributes.push(possibleAttributes[random]);
+  }
+
+  // Remove the attributes already used for building the external row
+  const remainingAttributes = possibleAttributes.filter(
+    (attribute) =>
+      !rowAttributes.some((rowAttribute) => rowAttribute.id === attribute.id)
+  );
+
+  // Get 3 random attributes for the external column
+  // from the attributes not yet used
+  for (let c = 0; c < 3; c++) {
+    const random = randomIntFromInterval(0, numPossibleAttributes - 4);
+    colAttributes.push(remainingAttributes[random]);
+  }
+
+  // Save here the variants already used, since the same variant
+  // should never appear twice in the frame
+  const usedAttributeVariants = [];
+
+  const rowAttributeVariants = [];
+  const colAttributeVariants = [];
+  // Choose a random variant for each attribute
+  // taking care of never having the same variant
+  for (let r = 0; r < 3; r++) {
+    // Get the attribute variants
+    const attribute = rowAttributes[r];
+    const attributeVariants = [...data[attribute.model]];
+
+    // Filter already used variants out
+    const unusedAttributeVariants = attributeVariants.filter(
+      (variant) =>
+        !usedAttributeVariants.some(
+          (usedVariant) =>
+            usedVariant.attributeId === attribute.id &&
+            usedVariant.variantId === variant.id
+        )
+    );
+
+    // Get a random, yet not used variant
+    const random = randomIntFromInterval(0, unusedAttributeVariants.length - 1);
+    const variant = unusedAttributeVariants[random];
+
+    // Push the variant in the row attribute variants
+    rowAttributeVariants.push({
+      variant,
+      attribute,
+    });
+
+    // Push the used variant in used attribute variants
+    usedAttributeVariants.push({
+      attributeId: attribute.id,
+      variantId: variant.id,
+    });
+  }
+
+  for (let c = 0; c < 3; c++) {
+    // Get the attribute variants
+    const attribute = colAttributes[c];
+    const attributeVariants = [...data[attribute.model]];
+
+    // Filter already used variants out
+    const unusedAttributeVariants = attributeVariants.filter(
+      (variant) =>
+        !usedAttributeVariants.some(
+          (usedVariant) =>
+            usedVariant.attributeId === attribute.id &&
+            usedVariant.variantId === variant.id
+        )
+    );
+
+    // Get a random, yet not used variant
+    const random = randomIntFromInterval(0, unusedAttributeVariants.length - 1);
+    const variant = unusedAttributeVariants[random];
+
+    // Push the variant in the row attribute variants
+    colAttributeVariants.push({
+      variant,
+      attribute,
+    });
+
+    // Push the used variant in used attribute variants
+    usedAttributeVariants.push({
+      attributeId: attribute.id,
+      variantId: variant.id,
+    });
+  }
+
+  return { rowAttributeVariants, colAttributeVariants };
+}
+
+function buildDoku() {
+  // Define the matrix as an empty array
+  const matrix = []; // Read top to bottom, left to right
+
+  // Get frame attributes
+  const { rowAttributeVariants, colAttributeVariants } = getFrame();
+
+  // Create a copy of friends
+  let possibilities = [...friends];
+  const usedFriends = friends.map((friend) => {
+    return {
+      friendId: friend.id,
+      counter: 0,
+    };
+  });
+
+  // Create a possible matrix by looking at the friends
+  // who fit the attribute variants in the created frame
+  for (let r = 0; r < 3; r++) {
+    for (let c = 0; c < 3; c++) {
+      const index = possibilities.findIndex((possible) => {
+        if (
+          rowAttributeVariants[r].attribute.name.slice(0, 4) !== "type" &&
+          colAttributeVariants[c].attribute.name.slice(0, 4) !== "type"
+        ) {
+          // If the row and column attributes are not types
+          return (
+            possible[rowAttributeVariants[r].attribute.name] ===
+              rowAttributeVariants[r].variant.id &&
+            possible[colAttributeVariants[c].attribute.name] ===
+              colAttributeVariants[c].variant.id
+          );
+        } else if (
+          rowAttributeVariants[r].attribute.name.slice(0, 4) === "type" &&
+          colAttributeVariants[c].attribute.name.slice(0, 4) !== "type"
+        ) {
+          // The row attribute only is a type
+          return (
+            (possible.type1 === rowAttributeVariants[r].variant.id ||
+              possible.type2 === rowAttributeVariants[r].variant.id) &&
+            possible[colAttributeVariants[c].attribute.name] ===
+              colAttributeVariants[c].variant.id
+          );
+        } else if (
+          rowAttributeVariants[r].attribute.name.slice(0, 4) !== "type" &&
+          colAttributeVariants[c].attribute.name.slice(0, 4) === "type"
+        ) {
+          // The column attribute only is a type
+          return (
+            possible[rowAttributeVariants[r].attribute.name] ===
+              rowAttributeVariants[r].variant.id &&
+            (possible.type1 === colAttributeVariants[c].variant.id ||
+              possible.type2 === colAttributeVariants[c].variant.id)
+          );
+        } else {
+          // Both the row and the column attribute are types
+          return (
+            (possible.type1 === rowAttributeVariants[r].variant.id ||
+              possible.type2 === rowAttributeVariants[r].variant.id) &&
+            (possible.type1 === colAttributeVariants[c].variant.id ||
+              possible.type2 === colAttributeVariants[c].variant.id)
+          );
+        }
+      });
+
+      // Push in the matrix the friend found
+      matrix.push(possibilities[index]);
+
+      if (possibilities[index]) {
+        // Add 1 to the friend counter
+        const usedFriendIndex = usedFriends.findIndex(
+          (f) => f.friendId === possibilities[index].id
+        );
+        usedFriends[usedFriendIndex].counter++;
+
+        // If some friend has been used more than MAX_FRIEND_USAGE times
+        // remove that friend for the possible friends to choose
+        usedFriends.forEach((usedFriend) => {
+          if (usedFriend.counter >= MAX_FRIEND_USAGE) {
+            possibilities = possibilities.filter(
+              (p) => p.id !== usedFriend.friendId
+            );
+          }
+        });
+      } else {
+        break;
+      }
+    }
+  }
+
+  // Return the matrix and the external attributes
+  // Note that the matrix can have undefined values!!
+  return { matrix, rowAttributeVariants, colAttributeVariants };
+}
+
+function newGame() {
+  const savedDate = getGameState()?.today;
+  const today = getToday();
+
+  // Create a new doku only if there is no today in local storage
+  if (!savedDate || today - savedDate !== 0) {
+    // Clear old local storage
+    localStorage.clear();
+
+    // Try to build a doku until there exist a solution for the doku,
+    // i.e. there is a matrix without undefined values
+    let doku = buildDoku();
+    while (doku?.matrix?.some((item) => !item)) {
+      doku = buildDoku();
+    }
+
+    // Store all new game states in local storage
+    const { rowAttributeVariants, colAttributeVariants } = doku;
+    const newGameState = {
+      today,
+      row0: rowAttributeVariants[0],
+      row1: rowAttributeVariants[1],
+      row2: rowAttributeVariants[2],
+      col0: colAttributeVariants[0],
+      col1: colAttributeVariants[1],
+      col2: colAttributeVariants[2],
+      ps: 9,
+      score: 0,
+    };
+
+    setGameState(newGameState);
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+// ELEMENTS SELECTION
+const cells = document.querySelectorAll(".inside");
+const extCornerLeft = document.querySelector("#ext-corner-left");
+const extCornerRight = document.querySelector("#ext-corner-right");
+const extRow0 = document.querySelector("#ext-row-0");
+const extRow1 = document.querySelector("#ext-row-1");
+const extRow2 = document.querySelector("#ext-row-2");
+const extCol0 = document.querySelector("#ext-col-0");
+const extCol1 = document.querySelector("#ext-col-1");
+const extCol2 = document.querySelector("#ext-col-2");
+const psCell = document.querySelector("#ps");
+const scoreCell = document.querySelector("#score");
+const overlay = document.querySelector(".overlay");
+const formModal = document.querySelector("#form-modal");
+const btnCloseFormModal = document.querySelector("#close-form-modal");
+const form = document.querySelector("#form");
+const list = document.querySelector("#list");
+const listInput = document.querySelector("#input");
+const hiddenInputWithCellId = document.querySelector("#cell-id-input");
+const infoBtn = document.querySelector("#info-btn");
+const infoModal = document.querySelector("#info-modal");
+const btnCloseInfoModal = document.querySelector("#close-info-modal");
+const gameOverModal = document.querySelector("#game-over-modal");
+const btnCloseGameOverModal = document.querySelector("#close-game-over-modal");
+const winModal = document.querySelector("#win-modal");
+const btnCloseWinModal = document.querySelector("#close-win-modal");
+
+// HELPER FUNCTIONS
+const renderBoard = () => {
+  const gameState = getGameState();
+
+  // Render values in the external frame
+  extRow0.textContent = mapAttributesOnRepo[gameState.row0.attribute.id](
+    gameState.row0.variant.id
+  ).name;
+  extRow1.textContent = mapAttributesOnRepo[gameState.row1.attribute.id](
+    gameState.row1.variant.id
+  ).name;
+  extRow2.textContent = mapAttributesOnRepo[gameState.row2.attribute.id](
+    gameState.row2.variant.id
+  ).name;
+  extCol0.textContent = mapAttributesOnRepo[gameState.col0.attribute.id](
+    gameState.col0.variant.id
+  ).name;
+  extCol1.textContent = mapAttributesOnRepo[gameState.col1.attribute.id](
+    gameState.col1.variant.id
+  ).name;
+  extCol2.textContent = mapAttributesOnRepo[gameState.col2.attribute.id](
+    gameState.col2.variant.id
+  ).name;
+  psCell.textContent = `Punti vita: ${gameState.ps}`;
+  scoreCell.textContent = `Punti: ${gameState.score}`;
+  if (gameState.ps === 0) {
+    // If the ps are over, disable all cells and make summary btn appear
+    cells.forEach((cell) => cell.classList.add("disabled"));
+    extCornerRight.textContent = "RECAP DELLA PARTITA";
+    extCornerRight.classList.add("summary");
+    if (gameState.score === 9) {
+      // If the user won, show the win modal
+      extCornerRight.addEventListener("click", openWinModal);
+    } else {
+      // If the user lost, show the game over modal
+      extCornerRight.addEventListener("click", openGameOverModal);
+    }
+  }
+
+  for (let r = 0; r < 3; r++) {
+    for (let c = 0; c < 3; c++) {
+      const cell = document.querySelector(`#cell-${r}-${c}`);
+      const friendInCell = gameState[`cell-${r}-${c}`];
+      // If the friend in the cell has already been found,
+      // set the right name to the cell and disable the button
+      if (friendInCell) {
+        cell.textContent = friendInCell;
+        cell.classList.add("disabled");
+        cell.removeEventListener("click", onCellClick);
+      } else {
+        cell.textContent = "???";
+        if (gameState.ps > 0) {
+          cell.addEventListener("click", onCellClick);
+        }
+      }
+    }
+  }
+};
+
+const getNonReusableFriends = () => {
+  // Retrieve the game state
+  const gameState = getGameState();
+
+  // Push all already used friends in an array
+  const usedFriends = [];
+  for (let r = 0; r < 3; r++) {
+    for (let c = 0; c < 3; c++) {
+      const friendInCell = gameState[`cell-${r}-${c}`];
+      if (friendInCell) {
+        // Push all friends already used in the usedFriends array
+        usedFriends.push(friendInCell);
+      }
+    }
+  }
+
+  // TODO: logic to count how many times friends are used
+  // and compare it with MAX_FRIEND_USAGE
+  return usedFriends;
+};
+
+const createFriendList = () => {
+  for (const f of friends) {
+    const option = document.createElement("option");
+    option.value = f.name;
+    list.appendChild(option);
+  }
+};
+
+const isFriendRight = (friend, cellId) => {
+  const gameState = getGameState();
+  const r = cellId.split("-")[1];
+  const c = cellId.split("-")[2];
+
+  if (
+    gameState[`row${r}`].attribute.name.slice(0, 4) !== "type" &&
+    gameState[`col${c}`].attribute.name.slice(0, 4) !== "type"
+  ) {
+    // If the row and column attributes are not types
+    return (
+      friend[gameState[`row${r}`].attribute.name] ===
+        gameState[`row${r}`].variant.id &&
+      friend[gameState[`col${c}`].attribute.name] ===
+        gameState[`col${c}`].variant.id
+    );
+  } else if (
+    gameState[`row${r}`].attribute.name.slice(0, 4) === "type" &&
+    gameState[`col${c}`].attribute.name.slice(0, 4) !== "type"
+  ) {
+    // The row attribute only is a type
+    return (
+      (friend.type1 === gameState[`row${r}`].variant.id ||
+        friend.type2 === gameState[`row${r}`].variant.id) &&
+      friend[gameState[`col${c}`].attribute.name] ===
+        gameState[`col${c}`].variant.id
+    );
+  } else if (
+    gameState[`row${r}`].attribute.name.slice(0, 4) !== "type" &&
+    gameState[`col${c}`].attribute.name.slice(0, 4) === "type"
+  ) {
+    // The col attribute only is a type
+    return (
+      friend[gameState[`row${r}`].attribute.name] ===
+        gameState[`row${r}`].variant.id &&
+      (friend.type1 === gameState[`col${c}`].variant.id ||
+        friend.type2 === gameState[`col${c}`].variant.id)
+    );
+  } else {
+    // Both the row and the column attribute are types
+    return (
+      (friend.type1 === gameState[`row${r}`].variant.id ||
+        friend.type2 === gameState[`row${r}`].variant.id) &&
+      (friend.type1 === gameState[`col${c}`].variant.id ||
+        friend.type2 === gameState[`col${c}`].variant.id)
+    );
+  }
+};
+
+const openFormModal = function () {
+  formModal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeFormModal = function () {
+  formModal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+const openInfoModal = function () {
+  infoModal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeInfoModal = function () {
+  infoModal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+const openWinModal = function () {
+  winModal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeWinModal = function () {
+  winModal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+const openGameOverModal = function () {
+  gameOverModal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeGameOverModal = function () {
+  gameOverModal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+const onCellClick = (e) => {
+  openFormModal();
+  const cellId = e.target.id;
+
+  // Add clicked cell id to hidden input tag in the form
+  hiddenInputWithCellId.setAttribute("value", cellId);
+};
+
+const onFormSubmit = (e) => {
+  e.preventDefault();
+
+  // Get the data from the form
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+  const friendName = data.friend;
+  const cellId = data.cell;
+
+  // Check if the chosen friend is the right one
+  const friend = getFriendByName(friendName);
+  if (!friend) {
+    alert("Devi scegliere un a-micio nella lista degli amici!!");
+  }
+  const nonReusableFriends = getNonReusableFriends();
+  console.log(nonReusableFriends);
+  console.log(friendName);
+  if (nonReusableFriends.includes(friendName)) {
+    alert(
+      `Non puoi utilizzare lo stesso a-micio più di ${
+        MAX_FRIEND_USAGE === 1 ? "una volta" : `${MAX_FRIEND_USAGE} volte`
+      }!!`
+    );
+    return;
+  }
+  const isRight = isFriendRight(friend, cellId);
+
+  const gameState = getGameState();
+  if (isRight) {
+    // Store in local storage the cell and friend as key-value pairs
+    gameState[cellId] = friendName;
+
+    // Increment the score
+    gameState.score = gameState.score + 1;
+  }
+
+  // Manage ps
+  if (gameState.ps > 0) {
+    gameState.ps = gameState.ps - 1;
+  }
+
+  // Save the new state
+  setGameState(gameState);
+
+  // Re-render the board with the updated state
+  renderBoard();
+
+  // TODO: Reset datalist default value
+
+  // Close the form modal
+  closeFormModal();
+};
+
+const makeLogoSayMiao = () => {
+  extCornerLeft.addEventListener("click", () => {
+    alert("MIAO!");
+  });
+};
+
+// ACTUAL LOGIC
+// Render the board
+newGame();
+renderBoard();
+createFriendList();
+makeLogoSayMiao();
+
+// Add event listener to info button
+infoBtn.addEventListener("click", openInfoModal);
+
+// Logic for closing the modals
+btnCloseFormModal.addEventListener("click", closeFormModal);
+overlay.addEventListener("click", closeFormModal);
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !formModal.classList.contains("hidden")) {
+    closeFormModal();
+  }
+});
+btnCloseInfoModal.addEventListener("click", closeInfoModal);
+overlay.addEventListener("click", closeInfoModal);
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !infoModal.classList.contains("hidden")) {
+    closeInfoModal();
+  }
+});
+btnCloseGameOverModal.addEventListener("click", closeGameOverModal);
+overlay.addEventListener("click", closeGameOverModal);
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !gameOverModal.classList.contains("hidden")) {
+    closeGameOverModal();
+  }
+});
+btnCloseWinModal.addEventListener("click", closeWinModal);
+overlay.addEventListener("click", closeWinModal);
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !winModal.classList.contains("hidden")) {
+    closeWinModal();
+  }
+});
+
+form.addEventListener("submit", onFormSubmit);
