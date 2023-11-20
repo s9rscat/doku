@@ -1,6 +1,7 @@
 "use strict";
 
 // Constants
+const GAME_STATE_NAMESPACE = "acat-game-state";
 const DAY_MILLISECONDS = 86400000;
 const MAX_FRIEND_USAGE = 1;
 
@@ -370,17 +371,21 @@ const mapAttributesOnRepo = {
 
 // States creation
 function getGameState() {
-  return JSON.parse(localStorage.getItem("game-state"));
+  return JSON.parse(localStorage.getItem(GAME_STATE_NAMESPACE));
 }
 
 function setGameState(gameState) {
-  return localStorage.setItem("game-state", JSON.stringify(gameState));
+  return localStorage.setItem(GAME_STATE_NAMESPACE, JSON.stringify(gameState));
 }
 
-function getFrame() {
+function getFrameAttributes() {
   // Create a copy of the friend attributes
   const possibleAttributes = [...friendAttributes];
   const numPossibleAttributes = possibleAttributes.length;
+
+  // Save here the attributes already used, since the same attribute
+  // should never appear trice in the same row/column
+  const usedAttributeIds = [];
 
   // Get six random attributes (duplicates are allowed on the same row/column only)
   const rowAttributes = [];
@@ -388,8 +393,25 @@ function getFrame() {
 
   // Get 3 random attributes for the external row
   for (let r = 0; r < 3; r++) {
-    const random = randomIntFromInterval(0, numPossibleAttributes - 1);
-    rowAttributes.push(possibleAttributes[random]);
+    if (r < 2) {
+      const random = randomIntFromInterval(0, numPossibleAttributes - 1);
+      rowAttributes.push(possibleAttributes[random]);
+
+      // Push the used attribute in usedAttributes
+      usedAttributeIds.push(possibleAttributes[random].id);
+    } else {
+      // At the third iteration, forcely choose a different attribute
+      // Filter already used attributes out
+      const unusedAttributes = possibleAttributes.filter(
+        (attribute) =>
+          !usedAttributeIds.some(
+            (usedAttributeId) => usedAttributeId === attribute.id
+          )
+      );
+      // Choose a random attribute from the remaining attributes
+      const random = randomIntFromInterval(0, unusedAttributes.length - 1);
+      rowAttributes.push(unusedAttributes[random]);
+    }
   }
 
   // Remove the attributes already used for building the external row
@@ -401,9 +423,29 @@ function getFrame() {
   // Get 3 random attributes for the external column
   // from the attributes not yet used
   for (let c = 0; c < 3; c++) {
-    const random = randomIntFromInterval(0, numPossibleAttributes - 4);
-    colAttributes.push(remainingAttributes[random]);
+    if (c < 2) {
+      const random = randomIntFromInterval(0, numPossibleAttributes - 4);
+      colAttributes.push(remainingAttributes[random]);
+    } else {
+      // At the third iteration, forcely choose a different attribute
+      // Filter already used attributes out
+      const unusedAttributes = possibleAttributes.filter(
+        (attribute) =>
+          !usedAttributeIds.some(
+            (usedAttributeId) => usedAttributeId === attribute.id
+          )
+      );
+      // Choose a random attribute from the remaining attributes
+      const random = randomIntFromInterval(0, unusedAttributes.length - 1);
+      colAttributes.push(unusedAttributes[random]);
+    }
   }
+
+  return { rowAttributes, colAttributes };
+}
+
+function getFrame() {
+  const { rowAttributes, colAttributes } = getFrameAttributes();
 
   // Save here the variants already used, since the same variant
   // should never appear twice in the frame
@@ -464,16 +506,10 @@ function getFrame() {
     const random = randomIntFromInterval(0, unusedAttributeVariants.length - 1);
     const variant = unusedAttributeVariants[random];
 
-    // Push the variant in the row attribute variants
+    // Push the variant in the column attribute variants
     colAttributeVariants.push({
       variant,
       attribute,
-    });
-
-    // Push the used variant in used attribute variants
-    usedAttributeVariants.push({
-      attributeId: attribute.id,
-      variantId: variant.id,
     });
   }
 
@@ -841,8 +877,6 @@ const onFormSubmit = (e) => {
     alert("Devi scegliere un a-micio nella lista degli amici!!");
   }
   const nonReusableFriends = getNonReusableFriends();
-  console.log(nonReusableFriends);
-  console.log(friendName);
   if (nonReusableFriends.includes(friendName)) {
     alert(
       `Non puoi utilizzare lo stesso a-micio più di ${
