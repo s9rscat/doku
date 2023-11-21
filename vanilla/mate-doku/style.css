@@ -23,9 +23,8 @@ body {
 }
 
 footer {
-  bottom: 15px;
   text-align: center;
-  font-size: 16px;
+  font-size: 1.5rem;
 }
 
 .fixed-header {
@@ -231,7 +230,7 @@ footer {
 }
 
 .form-title {
-  padding-bottom: 15px;
+  padding-bottom: 2rem;
 }
 
 .form {
@@ -250,7 +249,7 @@ footer {
 }
 
 .info-modal {
-  font-size: 20px;
+  font-size: 2rem;
   color: var(--light-color);
   background-image: url("./assets/mod.jpg");
   background-size: cover;
@@ -259,13 +258,13 @@ footer {
 }
 
 .info-title {
-  font-size: 48px;
-  padding-bottom: 15px;
+  font-size: 6rem;
+  padding-bottom: 3rem;
   text-align: center;
 }
 
 .game-over-modal {
-  font-size: 20px;
+  font-size: 3rem;
   color: var(--light-color);
   text-align: end;
   background-image: url("./assets/mod.jpg");
@@ -275,7 +274,7 @@ footer {
 }
 
 .win-modal {
-  font-size: 20px;
+  font-size: 3rem;
   font-weight: bolder;
   color: white;
   text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000,
