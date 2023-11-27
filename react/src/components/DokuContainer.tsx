@@ -9,7 +9,7 @@ import { getToday } from "../businessLogic/helpers";
 //   setShowFormModal: Function;
 // };
 
-function DokuContainer({ showFormModal, setShowFormModal }) {
+function DokuContainer({ showFormModal, setShowFormModal }: any) {
   const today = getToday();
   const { extRow, extCol } = getDokuFrame();
 
