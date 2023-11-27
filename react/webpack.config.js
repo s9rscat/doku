@@ -52,6 +52,12 @@ module.exports = async (env, options) => {
     devServer: {
       hot: true, // Enable HMR in the development server
       historyApiFallback: true,
+      watchFiles: {
+        paths: ["src/**/*", "public/**/*"],
+        options: {
+          usePolling: false,
+        },
+      },
     },
   };
 };
