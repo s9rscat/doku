@@ -1,3 +1,7 @@
+@import "variables";
+@import "header";
+@import "button";
+
 html,
 body,
 #root {
@@ -9,37 +13,6 @@ body,
 
 * {
   box-sizing: border-box;
-}
-.app {
-  margin: 0;
-}
-
-// Header classes
-.fixed-header {
-  width: 100%;
-  position: fixed;
-  background-color: #303030;
-  padding: 4px 0;
-  color: #eee;
-  top: 0;
-  white-space: nowrap;
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-}
-
-.header-title {
-  margin: 10px;
-  padding-left: 5%;
-  font-size: 24px;
-  float: left;
-}
-
-.header-info {
-  margin: 10px;
-  padding-right: 5%;
-  background-color: #303030;
-  color: #eee;
-  border: none;
-  float: right;
 }
 
 // General modals classes
