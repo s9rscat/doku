@@ -1,0 +1,1 @@
+export const DAY_MILLISECONDS = 86400000;
