@@ -1,0 +1,35 @@
+// Header classes
+.header {
+  background-color: $main-color;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 8px 16px;
+  color: $lighter-color;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+
+  &-title {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+
+    .logo {
+      height: 100%;
+    }
+    .logo-writing {
+      height: 50%;
+    }
+  }
+
+  &-info {
+    color: $lighter-color;
+  }
+
+  @media (max-width: $screen-threshold) {
+    height: 60px;
+  }
+}

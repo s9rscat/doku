@@ -1,0 +1,10 @@
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+    transition: $transition-time-medium opacity;
+  }
+}
