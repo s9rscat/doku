@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/App.scss";
-import { beards } from "./businessLogic/data";
+import { beards } from "./businessLogic/acat/data";
 import Header from "./components/Header";
 // import Container from "./components/Container";
 

@@ -1,6 +1,16 @@
-import { BaseData, Friend } from "./types";
+import { Attribute, Friend, Variant } from "./types";
 
-export const types: BaseData[] = [
+const friendAttributes: Attribute[] = [
+  { id: 1, name: "type1", model: "types" },
+  { id: 2, name: "type2", model: "types" },
+  { id: 3, name: "generation", model: "generations" },
+  { id: 4, name: "hair", model: "hairs" },
+  { id: 5, name: "beard", model: "beards" },
+  { id: 6, name: "house", model: "houses" },
+  { id: 7, name: "engagement", model: "engagements" },
+];
+
+const types: Variant[] = [
   { id: 1, name: "Buio" },
   { id: 2, name: "Lotta" },
   { id: 3, name: "Roccia" },
@@ -10,7 +20,7 @@ export const types: BaseData[] = [
   { id: 7, name: "Psico" },
 ];
 
-export const generations: BaseData[] = [
+const generations: Variant[] = [
   { id: 1, name: "Prima generazione (1994)" },
   { id: 2, name: "Seconda generazione (1995)" },
   { id: 3, name: "Terza generazione (1996)" },
@@ -20,29 +30,29 @@ export const generations: BaseData[] = [
   { id: 7, name: "Futuristico (> 1998)" },
 ];
 
-export const hairs: BaseData[] = [
+const hairs: Variant[] = [
   { id: 1, name: "Capelli biondi" },
   { id: 2, name: "Capelli castani" },
   { id: 3, name: "Capelli neri" },
   { id: 4, name: "Capelli rossi" },
 ];
 
-export const beards: BaseData[] = [
+const beards: Variant[] = [
   { id: 1, name: "Ha la barba" },
   { id: 2, name: "Non ha la barba" },
 ];
 
-export const houses: BaseData[] = [
+const houses: Variant[] = [
   { id: 1, name: "Ha una casa propria" },
   { id: 2, name: "Non ha una casa propria" },
 ];
 
-export const engagements: BaseData[] = [
+const engagements: Variant[] = [
   { id: 1, name: "Fidanzat*" },
   { id: 2, name: "Non fidanzat*" },
 ];
 
-export const friends: Friend[] = [
+const friends: Friend[] = [
   {
     id: 1,
     name: "Irene",
@@ -275,3 +285,14 @@ export const friends: Friend[] = [
     engagement: 2,
   },
 ];
+
+export default {
+  friendAttributes,
+  types,
+  generations,
+  hairs,
+  beards,
+  houses,
+  engagements,
+  friends,
+};

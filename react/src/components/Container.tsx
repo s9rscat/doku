@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import FormModal from "./FormModal";
 import DokuContainer from "./DokuContainer";
 import "../styles/App.scss";
-import { getDokuFrame } from "../businessLogic/dokuBuilder";
+import { getDokuFrame } from "../businessLogic/mate/dokuBuilder";
 import { getToday } from "../businessLogic/helpers";
 
 function Container() {
