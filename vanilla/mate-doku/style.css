@@ -41,28 +41,31 @@ footer {
 }
 
 .fixed-header {
-  height: 80px;
-  color: var(--light-color);
   background-color: var(--dark-color);
-  width: 100%;
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  height: 80px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--light-color);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
 }
 
 .header-title {
-  padding-left: 5%;
-  float: left;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
 }
 
-/* TODO: still to be made responsive */
 .logo {
-  width: 50px;
-  height: 50px;
+  height: 100%;
 }
 
 .logo-writing {
-  padding: 1.5rem;
-  width: 275px;
-  height: 60px;
+  height: 50%;
+  aspect-ratio: 10/1;
 }
 
 .header-info {
