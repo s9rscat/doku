@@ -68,6 +68,16 @@ footer {
   aspect-ratio: 10/1;
 }
 
+@media (max-width: 768px) {
+  .fixed-header {
+    height: 60px;
+  }
+
+  .logo-writing {
+    aspect-ratio: 8/1;
+  }
+}
+
 .header-info {
   padding-right: 5%;
   padding-top: 1rem;
