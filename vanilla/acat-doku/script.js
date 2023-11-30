@@ -426,6 +426,9 @@ function getFrameAttributes() {
     if (c < 2) {
       const random = randomIntFromInterval(0, numPossibleAttributes - 4);
       colAttributes.push(remainingAttributes[random]);
+
+      // Push the used attribute in usedAttributes
+      usedAttributeIds.push(remainingAttributes[random].id);
     } else {
       // At the third iteration, forcely choose a different attribute
       // Filter already used attributes out

@@ -436,6 +436,11 @@ function getOriginById(id) {
   return origins.find((origin) => origin.id === id);
 }
 
+// Pep repository
+function getPepById(id) {
+  return peps.find((pep) => pep.id === id);
+}
+
 // Mappers
 const mapAttributesOnRepo = {
   1: getGenderById,
@@ -445,6 +450,7 @@ const mapAttributesOnRepo = {
   5: getCurriculumById,
   6: getZancoById,
   7: getOriginById,
+  8: getPepById,
 };
 
 // States creation
@@ -489,6 +495,9 @@ function getFrameAttributes() {
       // Choose a random attribute from the remaining attributes
       const random = randomIntFromInterval(0, unusedAttributes.length - 1);
       rowAttributes.push(unusedAttributes[random]);
+
+      // Push the used attribute in usedAttributes
+      usedAttributeIds.push(possibleAttributes[random].id);
     }
   }
 
@@ -504,6 +513,9 @@ function getFrameAttributes() {
     if (c < 2) {
       const random = randomIntFromInterval(0, numPossibleAttributes - 4);
       colAttributes.push(remainingAttributes[random]);
+
+      // Push the used attribute in usedAttributes
+      usedAttributeIds.push(remainingAttributes[random].id);
     } else {
       // At the third iteration, forcely choose a different attribute
       // Filter already used attributes out
