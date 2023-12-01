@@ -103,17 +103,24 @@ footer {
 }
 
 .container {
-  padding-top: 3.5rem;
+  padding-top: 2rem;
   width: 100%;
-  flex: 1;
+  height: 100%;
   overflow-y: auto;
+  font-family: "VT323";
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 1rem;
+    font-family: 12pt;
+  }
 }
 
 .doku-container {
   width: 100%;
-  max-width: 600px;
-  font-family: "VT323";
-  font-size: 2rem;
+  max-width: 800px;
   align-content: center;
   justify-content: center;
   margin-left: auto;
@@ -128,8 +135,6 @@ footer {
   border-collapse: collapse;
   align-content: center;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .inside {
