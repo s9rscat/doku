@@ -40,7 +40,8 @@ footer {
   font-size: 1.5rem;
 }
 
-.fixed-header {
+/* HEADER */
+.header {
   background-color: var(--dark-color);
   height: 80px;
   padding: 8px 16px;
@@ -69,7 +70,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .fixed-header {
+  .header {
     height: 60px;
   }
 
@@ -79,14 +80,12 @@ footer {
 }
 
 .header-info {
-  padding-right: 5%;
-  padding-top: 1rem;
   font-size: 2.5rem;
   background-color: var(--dark-color);
   border: none;
-  float: right;
 }
 
+/* TITLE */
 .puzzle-title {
   padding-top: 0;
   margin-top: 0;
@@ -95,6 +94,12 @@ footer {
   font-size: 6rem;
   color: var(--darker-color);
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .puzzle-title {
+    font-size: 4rem;
+  }
 }
 
 .container {
