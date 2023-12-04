@@ -122,22 +122,51 @@ footer {
 }
 
 .doku-container {
+  display: grid;
   width: 100%;
   max-width: 800px;
   align-content: center;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  grid-template-areas: "grid stat";
+}
+
+@media (max-width: 768px) {
+  .doku-container {
+    grid-template-areas:
+      "grid"
+      "stat";
+  }
 }
 
 .grid-group {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-area: "grid";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   border-radius: 10%;
   border-collapse: collapse;
   align-content: center;
   justify-content: center;
+}
+
+.stat-group {
+  grid-area: "stat";
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  border-radius: 10%;
+  border-collapse: collapse;
+  align-content: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .stat-group {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
 }
 
 .inside {
@@ -158,6 +187,23 @@ footer {
   justify-content: center;
   color: var(--darker-color);
   aspect-ratio: 1;
+}
+
+.frame-stat {
+  padding: 2.5rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: var(--darker-color);
+  aspect-ratio: 1;
+}
+
+@media (max-width: 768px) {
+  .frame-stat {
+    padding: 0.5rem;
+    aspect-ratio: 2;
+  }
 }
 
 .inside:hover {
