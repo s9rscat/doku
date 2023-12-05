@@ -79,6 +79,12 @@ footer {
   aspect-ratio: 10/1;
 }
 
+.header-info {
+  font-size: 2.5rem;
+  background-color: var(--dark-color);
+  border: none;
+}
+
 @media (max-width: 768px) {
   .header {
     height: 60px;
@@ -87,12 +93,6 @@ footer {
   .logo-writing {
     aspect-ratio: 8/1;
   }
-}
-
-.header-info {
-  font-size: 2.5rem;
-  background-color: var(--dark-color);
-  border: none;
 }
 
 /* CONTAINER
@@ -219,11 +219,11 @@ It also holds all the modals.
 
 @media (max-width: 768px) {
   .frame {
-    padding: 0;
+    padding: 0.5rem;
   }
 
   .inside {
-    padding: 0;
+    padding: 0.5rem;
   }
 }
 
@@ -238,6 +238,11 @@ It also holds all the modals.
   aspect-ratio: 1;
 }
 
+.frame-logo {
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 768px) {
   .frame-stat {
     margin-left: 0;
@@ -246,18 +251,13 @@ It also holds all the modals.
   }
 
   .frame-logo {
-    /* Keep the same padding so that the relative dimension does not change */
-    padding: 2.5rem;
+    /* Keep some padding so that the logo does not get too small */
+    padding: 1rem;
   }
 }
 
 .inside:hover {
   background-color: var(--medium-light-color);
-}
-
-.frame-logo {
-  width: 100%;
-  height: 100%;
 }
 
 /* TODO: refactor after responsiveness */
@@ -285,40 +285,34 @@ It also holds all the modals.
   background-color: #eee;
 }
 
-#cell-0-0,
-#cell-1-0,
-#cell-2-0 {
+.top-doku-cell {
   border-top: 2px solid var(--darker-color);
 }
-#cell-2-0 {
+
+.left-doku-cell {
+  border-left: 2px solid var(--darker-color);
+}
+
+.right-doku-cell {
   border-right: 2px solid var(--darker-color);
+}
+
+.bottom-doku-cell {
+  border-bottom: 2px solid var(--darker-color);
+}
+
+#cell-2-0 {
   border-top-right-radius: 10%;
 }
 #cell-0-0 {
-  border-left: 2px solid var(--darker-color);
   border-top-left-radius: 10%;
 }
 
-#cell-2-1 {
-  border-right: 2px solid var(--darker-color);
-}
-
-#cell-0-1 {
-  border-left: 2px solid var(--darker-color);
-}
-
-#cell-0-2,
-#cell-1-2,
 #cell-2-2 {
-  border-bottom: 2px solid var(--darker-color);
-}
-#cell-2-2 {
-  border-right: 2px solid var(--darker-color);
   border-bottom-right-radius: 10%;
 }
 
 #cell-0-2 {
-  border-left: 2px solid var(--darker-color);
   border-bottom-left-radius: 10%;
 }
 
