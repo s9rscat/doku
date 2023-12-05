@@ -6,6 +6,8 @@
   --medium-dark-color: #444;
   --dark-color: #303030;
   --darker-color: #000000;
+  --main-font-size-big-vw: 15pt;
+  --main-font-size-small-vw: 11pt;
 }
 
 /* Hide scrollbar but keep scroll functionality */
@@ -38,12 +40,14 @@ footer {
   font-family: "Quicksand", sans-serif;
   margin-top: 50px;
   bottom: 15px;
-  font-size: 1.5rem;
-  align-content: center;
   text-align: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 1rem;
+    font-size: var(--main-font-size-small-vw);
+  }
 }
 
 /* HEADER */
@@ -105,13 +109,13 @@ It also holds all the modals.
   height: 100%;
   overflow-y: auto;
   font-family: "VT323";
-  font-size: 15pt;
+  font-size: var(--main-font-size-big-vw);
 }
 
 @media (max-width: 768px) {
   .container {
     padding-top: 1rem;
-    font-size: 10pt;
+    font-size: var(--main-font-size-small-vw);
   }
 }
 
@@ -142,7 +146,8 @@ It also holds all the modals.
 
 .doku-container {
   display: grid;
-  max-width: 700px;
+  width: 100%;
+  max-width: 500px;
   grid-template-areas: "grid stat";
 }
 
@@ -151,8 +156,7 @@ It also holds all the modals.
     grid-template-areas:
       "grid"
       "stat";
-    max-width: 180px;
-    font-size: 10pt;
+    max-width: 120px;
   }
 }
 
@@ -165,6 +169,13 @@ It also holds all the modals.
   border-collapse: collapse;
   align-content: center;
   justify-content: center;
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .grid-group {
+    max-width: 200px;
+  }
 }
 
 .stat-group {
@@ -192,11 +203,11 @@ It also holds all the modals.
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border: 1px solid grey;
+  border: 1px solid #808080;
 }
 
 .frame {
-  padding: 2.5rem;
+  padding: 1.5rem;
   display: flex;
   text-align: center;
   align-items: center;
@@ -205,7 +216,18 @@ It also holds all the modals.
   aspect-ratio: 1;
 }
 
+@media (max-width: 768px) {
+  .frame {
+    padding: 0;
+  }
+
+  .inside {
+    padding: 0;
+  }
+}
+
 .frame-stat {
+  margin-left: 1.5rem;
   padding: 2.5rem;
   display: flex;
   text-align: center;
@@ -217,8 +239,14 @@ It also holds all the modals.
 
 @media (max-width: 768px) {
   .frame-stat {
+    margin-left: 0;
     padding: 0.5rem;
     aspect-ratio: 2;
+  }
+
+  .frame-logo {
+    /* Keep the same padding so that the relative dimension does not change */
+    padding: 2.5rem;
   }
 }
 
