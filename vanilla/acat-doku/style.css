@@ -44,6 +44,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  body {
+    background-position: 100% 100%;
+  }
+
   footer {
     padding-top: 1rem;
     font-size: var(--main-font-size-small-vw);
@@ -96,13 +100,13 @@ footer {
 }
 
 /* CONTAINER
-/* The container has three blocks: 
-- the title, 
-- the doku-container (holding the grid and stat container)
-- the footer
-
-It also holds all the modals.
-*/
+  /* The container has three blocks: 
+  - the title, 
+  - the doku-container (holding the grid and stat container)
+  - the footer
+  
+  It also holds all the modals.
+  */
 .container {
   padding-top: 2rem;
   width: 100%;

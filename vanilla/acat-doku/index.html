@@ -26,311 +26,10 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
-    <style type="text/css">
-      html,
-      body {
-        background-color: #fafafa;
-        font-weight: 800;
-        /* font-size: 20px; */
-        font-family: "Quicksand", sans-serif;
-        background-image: url("./assets/main.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 75% 0%;
-        padding-top: 60px;
-      }
-
-      footer {
-        bottom: 15px;
-        text-align: center;
-        font-size: 16px;
-      }
-
-      ::-webkit-scrollbar {
-        display: none;
-      }
-
-      .fixed-header {
-        width: 100%;
-        position: fixed;
-        background-color: #303030;
-        padding: 4px 0;
-        color: #eee;
-        top: 0;
-        white-space: nowrap;
-        box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-      }
-
-      .header-title {
-        padding-left: 5%;
-        float: left;
-      }
-
-      .logo {
-        margin: 5px;
-        width: 50px;
-        height: 50px;
-      }
-
-      .logo-writing {
-        margin-top: 5px;
-        padding: 15px;
-        width: 275px;
-        height: 60px;
-      }
-
-      .header-info {
-        padding-right: 5%;
-        padding-top: 15px;
-        font-size: 24px;
-        background-color: #303030;
-        border: none;
-        float: right;
-      }
-
-      .puzzle-title {
-        padding-top: 0;
-        margin-top: 0;
-        font-family: "VT323";
-        text-shadow: 2px 0 #ccc;
-        font-size: 60px;
-        color: black;
-        padding-bottom: 15px;
-        text-align: center;
-      }
-
-      #cell-0-0,
-      #cell-1-0,
-      #cell-2-0 {
-        border-top: 2px solid #000000;
-      }
-      #cell-2-0 {
-        border-right: 2px solid #000000;
-        border-top-right-radius: 10%;
-      }
-      #cell-0-0 {
-        border-left: 2px solid #000000;
-        border-top-left-radius: 10%;
-      }
-
-      #cell-2-1 {
-        border-right: 2px solid #000000;
-      }
-
-      #cell-0-1 {
-        border-left: 2px solid #000000;
-      }
-
-      #cell-0-2,
-      #cell-1-2,
-      #cell-2-2 {
-        border-bottom: 2px solid #000000;
-      }
-      #cell-2-2 {
-        border-right: 2px solid #000000;
-        border-bottom-right-radius: 10%;
-      }
-
-      #cell-0-2 {
-        border-left: 2px solid #000000;
-        border-bottom-left-radius: 10%;
-      }
-
-      /* -------------------------- */
-      /* CLASSES TO MAKE MODAL WORK */
-      .close-modal-btn {
-        position: absolute;
-        top: 1.2rem;
-        right: 2rem;
-        font-size: 5rem;
-        color: #333;
-        cursor: pointer;
-        border: none;
-        background: none;
-      }
-
-      .hidden {
-        display: none;
-      }
-
-      .mod {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 70%;
-        background-color: #eee;
-        padding: 6rem;
-        border-radius: 5px;
-        box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-        z-index: 10;
-      }
-
-      .form-modal {
-        background-image: url("./assets/form-modal.jpg");
-        color: #fff;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-      }
-
-      .form-title {
-        padding-bottom: 15px;
-      }
-
-      .form {
-        color: #333;
-      }
-
-      .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(3px);
-        z-index: 5;
-      }
-
-      .info-modal {
-        font-size: 20px;
-        /* color: white;  */
-        /* background-image: url("./rules-cat.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 50%; */
-      }
-
-      .info-title {
-        font-size: 48px;
-        padding-bottom: 15px;
-        text-align: center;
-      }
-
-      .game-over-modal {
-        font-size: 20px;
-        color: #ccc;
-        text-align: end;
-        background-image: url("./assets/gameover-modal.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 25% 50%;
-      }
-
-      .win-modal {
-        font-size: 20px;
-        font-weight: bolder;
-        color: white;
-        text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000,
-          1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
-        text-align: center;
-        background-image: url("./assets/win-modal.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 25% 50%;
-      }
-
-      /* -------------------------- */
-      /* CLASSES TO MAKE SEARCH FORM */
-      .container {
-        width: 100%;
-        height: 100%;
-      }
-
-      .doku-container {
-        /* position: relative; */
-        align-content: center;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-        /* padding: 25%; */
-        padding-top: 0%;
-        font-family: "VT323";
-        font-size: 20px;
-      }
-
-      .grid-group {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        justify-items: stretch;
-        align-items: inital;
-        border-radius: 10%;
-        border-collapse: collapse;
-        align-content: center;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .inside {
-        padding: 20px 24px;
-        cursor: pointer;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #eee;
-        color: #444;
-        border: 1px solid grey;
-        aspect-ratio: 1;
-      }
-
-      .frame {
-        padding: 20px 24px;
-        text-align: center;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: black;
-        aspect-ratio: 1;
-      }
-
-      .inside:hover {
-        background-color: #ffc5c5;
-      }
-
-      .frame-logo {
-        width: 100px;
-        height: 100px;
-      }
-
-      .summary {
-        padding: 20px 24px;
-        cursor: pointer;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 100%;
-      }
-
-      .summary:hover {
-        background-color: #ffc5c5;
-        background-image: url("./assets/recap-modal.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        /* background-position: 25% 50%; */
-        opacity: 0.5;
-        color: black;
-      }
-
-      .disabled {
-        cursor: not-allowed;
-      }
-
-      .disabled:hover {
-        background-color: #eee;
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="fixed-header">
+    <div class="header">
       <div class="header-title">
         <img src="./assets/acat-logo.png" alt="Logo" class="logo" />
         <img src="./assets/acat-write.png" alt="Logo" class="logo-writing" />
@@ -342,8 +41,8 @@
       </div>
     </div>
     <div class="container">
-      <h1 class="puzzle-title">Il Puzzle Di Oggi!</h1>
-      <div class="doku-container">
+      <h1 class="puzzle-title container-block">Il Puzzle Di Oggi!</h1>
+      <div class="doku-container container-block">
         <div class="grid-group">
           <div id="ext-corner-left" class="frame">
             <img src="./assets/acat-logo.png" alt="Logo" class="frame-logo" />
@@ -351,49 +50,63 @@
           <div id="ext-row-0" class="frame"></div>
           <div id="ext-row-1" class="frame"></div>
           <div id="ext-row-2" class="frame"></div>
+          <div id="ext-col-0" class="frame"></div>
+          <div id="cell-0-0" class="inside top-doku-cell left-doku-cell"></div>
+          <div id="cell-1-0" class="inside top-doku-cell"></div>
+          <div id="cell-2-0" class="inside top-doku-cell right-doku-cell"></div>
+          <div id="ext-col-1" class="frame"></div>
+          <div id="cell-0-1" class="inside left-doku-cell"></div>
+          <div id="cell-1-1" class="inside"></div>
+          <div id="cell-2-1" class="inside right-doku-cell"></div>
+          <div id="ext-col-2" class="frame"></div>
+          <div
+            id="cell-0-2"
+            class="inside bottom-doku-cell left-doku-cell"
+          ></div>
+          <div id="cell-1-2" class="inside bottom-doku-cell"></div>
+          <div
+            id="cell-2-2"
+            class="inside bottom-doku-cell right-doku-cell"
+          ></div>
+        </div>
+        <div class="stat-group">
           <div
             id="ext-corner-right"
-            class="frame"
+            class="frame-stat"
             style="background-color: none"
           ></div>
-          <div id="ext-col-0" class="frame"></div>
-          <div id="cell-0-0" class="inside"></div>
-          <div id="cell-1-0" class="inside"></div>
-          <div id="cell-2-0" class="inside"></div>
-          <div id="ps" class="frame"></div>
-          <div id="ext-col-1" class="frame"></div>
-          <div id="cell-0-1" class="inside"></div>
-          <div id="cell-1-1" class="inside"></div>
-          <div id="cell-2-1" class="inside"></div>
-          <div id="score" class="frame"></div>
-          <div id="ext-col-2" class="frame"></div>
-          <div id="cell-0-2" class="inside"></div>
-          <div id="cell-1-2" class="inside"></div>
-          <div id="cell-2-2" class="inside"></div>
-          <div class="frame"></div>
+          <div id="ps" class="frame-stat"></div>
+          <div id="score" class="frame-stat"></div>
         </div>
       </div>
-
-      <div id="form-modal" class="mod hidden form-modal">
-        <button id="close-form-modal" class="close-modal-btn">&times;</button>
-        <h1 class="form-title">Chi sarà?</h1>
-        <h4>Cerca un a-micio:</h4>
-        <form id="form" class="form">
-          <input id="cell-id-input" type="hidden" name="cell" value="" />
-          <input
-            type="text"
-            name="friend"
-            list="list"
-            id="input"
-            placeholder="Cerca..."
-            onfocus="this.value=''"
-          />
-          <datalist id="list"> </datalist>
-          <input type="submit" value="Invia" />
-        </form>
-      </div>
-      <div class="overlay hidden"></div>
+      <footer>
+        <p>Fatto con amore ❤️ da Irene e Mirco, per tutti i nostri a-mici!</p>
+        <p>
+          Puoi scriverci a:
+          <a href="mailto:acat-doku@yopmail.com">acat-doku@yopmail.com</a>
+        </p>
+      </footer>
     </div>
+
+    <div id="form-modal" class="mod hidden form-modal">
+      <button id="close-form-modal" class="close-modal-btn">&times;</button>
+      <h1 class="form-title">Chi sarà?</h1>
+      <h4>Cerca un a-micio:</h4>
+      <form id="form" class="form">
+        <input id="cell-id-input" type="hidden" name="cell" value="" />
+        <input
+          type="text"
+          name="friend"
+          list="list"
+          id="input"
+          placeholder="Cerca..."
+          onfocus="this.value=''"
+        />
+        <datalist id="list"> </datalist>
+        <input type="submit" value="Invia" />
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
 
     <div id="info-modal" class="mod hidden info-modal">
       <button id="close-info-modal" class="close-modal-btn">&times;</button>
@@ -411,7 +124,7 @@
         <li>Nuovo puzzle a mezzanotte EST!</li>
         <li>
           Per segnalare malfunzionamenti o dare feedback:
-          <a href="mailto:acat-doku@yopmail.com">acat-doky@yopmail.com</a>
+          <a href="mailto:acat-doku@yopmail.com">acat-doku@yopmail.com</a>
         </li>
       </ul>
     </div>
@@ -446,12 +159,5 @@
     <div class="overlay hidden"></div>
 
     <script src="script.js"></script>
-    <footer>
-      <p>Fatto con amore ❤️ da Irene e Mirco, per tutti i nostri a-mici!</p>
-      <p>
-        Puoi scriverci a:
-        <a href="mailto:acat-doku@yopmail.com">acat-doky@yopmail.com</a>
-      </p>
-    </footer>
   </body>
 </html>
