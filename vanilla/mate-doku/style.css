@@ -282,7 +282,7 @@ It also holds all the modals.
 }
 
 .disabled:hover {
-  background-color: #eee;
+  background-color: var(--lighter-color);
 }
 
 .top-doku-cell {
@@ -317,51 +317,11 @@ It also holds all the modals.
 }
 
 /* -------------------------- */
+/* -------------------------- */
+/* -------------------------- */
+/* -------------------------- */
+/* -------------------------- */
 /* MODALS */
-.close-modal-btn {
-  position: absolute;
-  top: 1.2rem;
-  right: 2rem;
-  font-size: 5rem;
-  color: var(--light-color);
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-.hidden {
-  display: none;
-}
-
-.mod {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-  background-color: #eee;
-  padding: 6rem;
-  border-radius: 5px;
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-  z-index: 10;
-}
-
-.form-modal {
-  background-image: url("./assets/mod-reverse.jpg");
-  color: white;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-
-.form-title {
-  padding-bottom: 2rem;
-}
-
-.form {
-  color: #333;
-}
-
 .overlay {
   position: fixed;
   top: 0;
@@ -373,6 +333,76 @@ It also holds all the modals.
   z-index: 5;
 }
 
+.hidden {
+  display: none;
+}
+
+.mod {
+  font-family: "Quicksand", sans-serif;
+  font-size: var(--main-font-size-big-vw);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: var(--lighter-color);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.mod-title {
+  font-size: 6rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.close-mod-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: var(--light-color);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+@media (max-width: 768px) {
+  .mod {
+    font-size: var(--main-font-size-small-vw);
+    padding: 2rem;
+  }
+
+  .mod-title {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+  }
+
+  .close-mod-btn {
+    top: 0.6rem;
+    right: 1rem;
+    font-size: 3rem;
+  }
+}
+
+.form-modal {
+  background-image: url("./assets/mod-reverse.jpg");
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.form {
+  color: var(--dark-color);
+}
+
+.form-title {
+  text-align: left;
+}
+
 .info-modal {
   font-size: 2rem;
   color: var(--light-color);
@@ -380,12 +410,6 @@ It also holds all the modals.
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-}
-
-.info-title {
-  font-size: 6rem;
-  padding-bottom: 3rem;
-  text-align: center;
 }
 
 .game-over-modal {
@@ -401,7 +425,7 @@ It also holds all the modals.
 .win-modal {
   font-size: 3rem;
   font-weight: bolder;
-  color: white;
+  color: var(--light-color);
   text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000,
     -1px -1px #000, 1px -1px #000, -1px 1px #000;
   text-align: center;
