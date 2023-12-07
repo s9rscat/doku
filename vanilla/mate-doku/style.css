@@ -203,6 +203,7 @@ It also holds all the modals.
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   cursor: pointer;
   border: 1px solid #808080;
 }
@@ -341,6 +342,7 @@ It also holds all the modals.
   font-family: "Quicksand", sans-serif;
   font-size: var(--main-font-size-big-vw);
   position: absolute;
+  text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -376,7 +378,7 @@ It also holds all the modals.
   }
 
   .mod-title {
-    font-size: 3rem;
+    font-size: 2rem;
     padding-bottom: 1rem;
   }
 
@@ -388,8 +390,9 @@ It also holds all the modals.
 }
 
 .form-modal {
-  background-image: url("./assets/mod-reverse.jpg");
+  text-align: left;
   color: white;
+  background-image: url("./assets/mod-reverse.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -404,7 +407,6 @@ It also holds all the modals.
 }
 
 .info-modal {
-  font-size: 2rem;
   color: var(--light-color);
   background-image: url("./assets/mod.jpg");
   background-size: cover;
@@ -413,9 +415,8 @@ It also holds all the modals.
 }
 
 .game-over-modal {
-  font-size: 3rem;
   color: var(--light-color);
-  text-align: end;
+  /* text-align: end; */
   background-image: url("./assets/mod.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -423,13 +424,12 @@ It also holds all the modals.
 }
 
 .win-modal {
-  font-size: 3rem;
   font-weight: bolder;
   color: var(--light-color);
   text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000,
     -1px -1px #000, 1px -1px #000, -1px 1px #000;
   text-align: center;
-  background-image: url("./win-cat1.jpg");
+  background-image: url("./assets/mod.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 25% 50%;

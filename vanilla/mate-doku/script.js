@@ -971,12 +971,12 @@ const onFormSubmit = (e) => {
   // Check if the chosen friend is the right one
   const friend = getFriendByName(friendName);
   if (!friend) {
-    alert("Devi scegliere un a-micio nella lista degli amici!!");
+    alert("Devi scegliere un mate nella lista dei mates!!");
   }
   const nonReusableFriends = getNonReusableFriends();
   if (nonReusableFriends.includes(friendName)) {
     alert(
-      `Non puoi utilizzare lo stesso a-micio più di ${
+      `Non puoi utilizzare lo stesso mate più di ${
         MAX_FRIEND_USAGE === 1 ? "una volta" : `${MAX_FRIEND_USAGE} volte`
       }!!`
     );
