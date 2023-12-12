@@ -351,7 +351,7 @@ footer {
 }
 
 .form-modal {
-  background-image: url("./assets/mod-reverse.jpg");
+  background-image: url("./assets/form-modal.jpg");
   color: white;
   background-size: cover;
   background-repeat: no-repeat;
@@ -396,7 +396,7 @@ footer {
   font-size: 3rem;
   color: var(--light-color);
   text-align: end;
-  background-image: url("./assets/mod.jpg");
+  background-image: url("./assets/gameover-modal.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 10% 50%;
@@ -409,7 +409,7 @@ footer {
   text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000,
     -1px -1px #000, 1px -1px #000, -1px 1px #000;
   text-align: center;
-  background-image: url("./win-cat1.jpg");
+  background-image: url("./win-modal.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 25% 50%;
