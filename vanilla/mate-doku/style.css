@@ -8,6 +8,10 @@
   --darker-color: #000000;
   --main-font-size-big-vw: 15pt;
   --main-font-size-small-vw: 11pt;
+  --title-font-size-big-vw: 45pt;
+  --title-font-size-small-vw: 30pt;
+  --mod-title-font-size-big-vw: 40pt;
+  --mod-title-font-size-small-vw: 20pt;
 }
 
 /* Hide scrollbar but keep scroll functionality */
@@ -134,14 +138,14 @@ It also holds all the modals.
   padding-bottom: 2rem;
   font-family: "VT323";
   text-shadow: 2px 0 var(--light-color);
-  font-size: 6rem;
+  font-size: var(--title-font-size-big-vw);
   color: var(--darker-color);
   text-align: center;
 }
 
 @media (max-width: 768px) {
   .puzzle-title {
-    font-size: 4rem;
+    font-size: var(--title-font-size-small-vw);
     padding-bottom: 1rem;
   }
 }
@@ -342,7 +346,7 @@ It also holds all the modals.
   font-family: "Quicksand", sans-serif;
   font-size: var(--main-font-size-big-vw);
   position: absolute;
-  text-align: center;
+  text-align: left;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -355,8 +359,8 @@ It also holds all the modals.
 }
 
 .mod-title {
-  font-size: 6rem;
-  padding-bottom: 3rem;
+  font-size: var(--mod-title-font-size-big-vw);
+  padding-bottom: 2rem;
   text-align: center;
 }
 
@@ -378,7 +382,7 @@ It also holds all the modals.
   }
 
   .mod-title {
-    font-size: 2rem;
+    font-size: var(--mod-title-font-size-small-vw);
     padding-bottom: 1rem;
   }
 
@@ -390,7 +394,6 @@ It also holds all the modals.
 }
 
 .form-modal {
-  text-align: left;
   color: white;
   background-image: url("./assets/mod-reverse.jpg");
   background-size: cover;
