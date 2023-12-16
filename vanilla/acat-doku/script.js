@@ -712,9 +712,11 @@ const renderBoard = () => {
     extCornerRight.classList.add("summary");
     if (gameState.score === 9) {
       // If the user won, show the win modal
+      openWinModal();
       extCornerRight.addEventListener("click", openWinModal);
     } else {
       // If the user lost, show the game over modal
+      openGameOverModal();
       extCornerRight.addEventListener("click", openGameOverModal);
     }
   }
