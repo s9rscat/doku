@@ -1,0 +1,439 @@
+/* Define CSS variables */
+:root {
+  --lighter-color: #eee;
+  --light-color: #ccc;
+  --medium-light-color: #d0d0d0;
+  --medium-dark-color: #444;
+  --dark-color: #303030;
+  --darker-color: #000000;
+  --main-font-size-big-vw: 15pt;
+  --main-font-size-small-vw: 11pt;
+  --title-font-size-big-vw: 45pt;
+  --title-font-size-small-vw: 30pt;
+  --mod-title-font-size-big-vw: 40pt;
+  --mod-title-font-size-small-vw: 20pt;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  font-weight: 800;
+  font-family: "Quicksand", sans-serif;
+  background-image: url("./assets/main.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  font-family: "Quicksand", sans-serif;
+  margin-top: 50px;
+  bottom: 15px;
+  text-align: center;
+  color: var(--darker-color);
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding-top: 1rem;
+    font-size: var(--main-font-size-small-vw);
+  }
+}
+
+/* HEADER */
+.header {
+  background-color: var(--dark-color);
+  height: 80px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--light-color);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+}
+
+.header-title {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+}
+
+.logo {
+  height: 100%;
+}
+
+.logo-writing {
+  height: 50%;
+  aspect-ratio: 10/1;
+}
+
+.header-info {
+  font-size: 2.5rem;
+  background-color: var(--dark-color);
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 60px;
+  }
+
+  .logo-writing {
+    aspect-ratio: 8/1;
+  }
+}
+
+/* CONTAINER
+  /* The container has three blocks: 
+  - the title, 
+  - the doku-container (holding the grid and stat container)
+  - the footer
+  
+  It also holds all the modals.
+  */
+.container {
+  padding-top: 2rem;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  font-family: "VT323";
+  font-size: var(--main-font-size-big-vw);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 1rem;
+    font-size: var(--main-font-size-small-vw);
+  }
+}
+
+.container-block {
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* TITLE */
+.puzzle-title {
+  padding-top: 0;
+  margin-top: 0;
+  padding-bottom: 2rem;
+  font-family: "VT323";
+  text-shadow: 2px 0 var(--light-color);
+  font-size: var(--title-font-size-big-vw);
+  color: var(--darker-color);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .puzzle-title {
+    font-size: var(--title-font-size-small-vw);
+    padding-bottom: 1rem;
+  }
+}
+
+.doku-container {
+  display: grid;
+  width: 100%;
+  max-width: 500px;
+  grid-template-areas: "grid stat";
+}
+
+@media (max-width: 768px) {
+  .doku-container {
+    grid-template-areas:
+      "grid"
+      "stat";
+    max-width: 350px;
+  }
+}
+
+.grid-group {
+  display: grid;
+  grid-area: "grid";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  border-radius: 10%;
+  border-collapse: collapse;
+  align-content: center;
+  justify-content: center;
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .grid-group {
+    max-width: 350px;
+  }
+}
+
+.stat-group {
+  grid-area: "stat";
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  border-radius: 10%;
+  align-content: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .stat-group {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+.inside {
+  color: var(--medium-dark-color);
+  background-color: var(--lighter-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #808080;
+}
+
+.frame {
+  padding: 1.5rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: var(--darker-color);
+  aspect-ratio: 1;
+}
+
+@media (max-width: 768px) {
+  .frame {
+    padding: 0.5rem;
+  }
+
+  .inside {
+    padding: 0.5rem;
+  }
+}
+
+.frame-stat {
+  margin-left: 1.5rem;
+  padding: 2.5rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: var(--darker-color);
+  aspect-ratio: 1;
+}
+
+.frame-logo {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .frame-stat {
+    margin-left: 0;
+    padding: 0.5rem;
+    aspect-ratio: 3;
+  }
+
+  .frame-logo {
+    /* Keep some padding so that the logo does not get too small */
+    padding: 1rem;
+  }
+}
+
+.inside:hover {
+  background-color: var(--medium-light-color);
+}
+
+/* TODO: refactor after responsiveness */
+.summary {
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--darker-color);
+  border-radius: 100%;
+  background-color: var(--lighter-color);
+}
+
+.summary:hover {
+  background-color: var(--medium-light-color);
+  /* background-position: 25% 50%; */
+  opacity: 0.2;
+  color: var(--darker-color);
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.disabled:hover {
+  background-color: var(--lighter-color);
+}
+
+.top-doku-cell {
+  border-top: 2px solid var(--darker-color);
+}
+
+.left-doku-cell {
+  border-left: 2px solid var(--darker-color);
+}
+
+.right-doku-cell {
+  border-right: 2px solid var(--darker-color);
+}
+
+.bottom-doku-cell {
+  border-bottom: 2px solid var(--darker-color);
+}
+
+#cell-2-0 {
+  border-top-right-radius: 10%;
+}
+#cell-0-0 {
+  border-top-left-radius: 10%;
+}
+
+#cell-2-2 {
+  border-bottom-right-radius: 10%;
+}
+
+#cell-0-2 {
+  border-bottom-left-radius: 10%;
+}
+
+/* -------------------------- */
+/* -------------------------- */
+/* -------------------------- */
+/* -------------------------- */
+/* -------------------------- */
+/* MODALS */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.hidden {
+  display: none;
+}
+
+.mod {
+  font-family: "Quicksand", sans-serif;
+  font-size: var(--main-font-size-big-vw);
+  position: absolute;
+  text-align: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: var(--lighter-color);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.mod-title {
+  font-size: var(--mod-title-font-size-big-vw);
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.close-mod-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: var(--light-color);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+@media (max-width: 768px) {
+  .mod {
+    font-size: var(--main-font-size-small-vw);
+    padding: 2rem;
+  }
+
+  .mod-title {
+    font-size: var(--mod-title-font-size-small-vw);
+    padding-bottom: 1rem;
+  }
+
+  .close-mod-btn {
+    top: 0.6rem;
+    right: 1rem;
+    font-size: 3rem;
+  }
+}
+
+.form-modal {
+  color: white;
+  background-image: url("./assets/form-modal.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.form {
+  color: var(--dark-color);
+}
+
+.form-title {
+  text-align: left;
+}
+
+.info-modal {
+  color: var(--medium-dark-color);
+}
+
+.game-over-modal {
+  color: white;
+  text-align: end;
+  background-image: url("./assets/game-end.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+}
+
+.win-modal {
+  font-weight: bolder;
+  color: var(--light-color);
+  text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000,
+    -1px -1px #000, 1px -1px #000, -1px 1px #000;
+  text-align: center;
+  background-image: url("./assets/game-end.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 25% 50%;
+}

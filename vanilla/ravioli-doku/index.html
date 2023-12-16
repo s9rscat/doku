@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=VT323"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="./assets/mate-logo.png" type="image/x-icon" />
+    <title>RavioliDoku</title>
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-title">
+        <img src="./assets/mate-logo.png" alt="Logo" class="logo" />
+        <img src="./assets/mate-write.png" alt="Logo" class="logo-writing" />
+      </div>
+      <div>
+        <button class="header-info">
+          <i id="info-btn" class="fa fa-info-circle"></i>
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <h1 class="puzzle-title container-block">Il Puzzle Di Oggi!</h1>
+      <div class="doku-container container-block">
+        <div class="grid-group">
+          <div id="ext-corner-left" class="frame">
+            <img src="./assets/mate-logo.png" alt="Logo" class="frame-logo" />
+          </div>
+          <div id="ext-row-0" class="frame"></div>
+          <div id="ext-row-1" class="frame"></div>
+          <div id="ext-row-2" class="frame"></div>
+          <div id="ext-col-0" class="frame"></div>
+          <div id="cell-0-0" class="inside top-doku-cell left-doku-cell"></div>
+          <div id="cell-1-0" class="inside top-doku-cell"></div>
+          <div id="cell-2-0" class="inside top-doku-cell right-doku-cell"></div>
+          <div id="ext-col-1" class="frame"></div>
+          <div id="cell-0-1" class="inside left-doku-cell"></div>
+          <div id="cell-1-1" class="inside"></div>
+          <div id="cell-2-1" class="inside right-doku-cell"></div>
+          <div id="ext-col-2" class="frame"></div>
+          <div
+            id="cell-0-2"
+            class="inside bottom-doku-cell left-doku-cell"
+          ></div>
+          <div id="cell-1-2" class="inside bottom-doku-cell"></div>
+          <div
+            id="cell-2-2"
+            class="inside bottom-doku-cell right-doku-cell"
+          ></div>
+        </div>
+        <div class="stat-group">
+          <div id="ext-corner-right" class="frame-stat"></div>
+          <div id="ps" class="frame-stat"></div>
+          <div id="score" class="frame-stat"></div>
+        </div>
+      </div>
+      <footer class="container-block">
+        <p>Fatto con amore ❤️ da Mirco, in onore di tutti i ravioli! ✨</p>
+        <p>
+          Per suggerimenti o segnalazioni:
+          <a href="mailto:ravioli-doku@yopmail.com">ravioli-doku@yopmail.com</a>
+        </p>
+      </footer>
+
+      <div id="form-modal" class="mod hidden form-modal">
+        <button id="close-form-modal" class="close-mod-btn">&times;</button>
+        <h1 class="mod-title form-title">Chi sarà?</h1>
+        <h4>Cerca un <em>raviolo</em>:</h4>
+        <form id="form" class="form">
+          <input id="cell-id-input" type="hidden" name="cell" value="" />
+          <input
+            type="text"
+            name="friend"
+            list="list"
+            id="input"
+            placeholder="Cerca..."
+            onfocus="this.value=''"
+          />
+          <datalist id="list"> </datalist>
+          <input type="submit" value="Invia" />
+        </form>
+      </div>
+      <div class="overlay hidden"></div>
+    </div>
+
+    <div id="info-modal" class="mod hidden info-modal">
+      <button id="close-info-modal" class="close-mod-btn">&times;</button>
+      <h2 class="mod-title">Regolamento</h2>
+      <ul>
+        <li>
+          Lo scopo del gioco è riempire ciascuno dei nove quadrati con il
+          corretto <em>raviolo</em>.
+        </li>
+        <li>Hai solamente 9 tentativi, quindi scegli attentamente!</li>
+        <li>
+          Non si può riutilizzare lo stesso <em>raviolo</em> più di una volta.
+        </li>
+        <li>Nuovo puzzle a mezzanotte EST!</li>
+        <li>
+          Per segnalare malfunzionamenti o dare feedback:
+          <a href="mailto:ravioli-doku@yopmail.com">ravioli-doku@yopmail.com</a>
+        </li>
+      </ul>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div id="game-over-modal" class="mod hidden game-over-modal">
+      <button
+        id="close-game-over-modal"
+        class="close-mod-btn"
+        style="color: #ccc"
+      >
+        &times;
+      </button>
+      <h2 class="mod-title">☠️ GAME OVER ☠️</h2>
+      <p>Hai finito i tentativi a tua disposizione!</p>
+      <p>Ritorna domani per un nuovo, fantastico puzzle!</p>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div id="win-modal" class="mod hidden win-modal">
+      <button id="close-win-modal" class="close-mod-btn">&times;</button>
+      <h2 class="mod-title">🎊 YOU WIN 🎊</h2>
+      <h3>CONGRATULAZIONI! 🎉</h3>
+      <h3>Conosci davvero bene tutti i tuoi compagni!</h3>
+      <h3>
+        L'università ti ha lasciato dei ricordi che porterai sempre nel cuore,
+        custodiscili con amore! ❤️
+      </h3>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
