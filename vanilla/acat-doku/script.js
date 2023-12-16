@@ -23,13 +23,15 @@ function getToday() {
 
 // Data
 const friendAttributes = [
-  { id: 1, name: "type1", model: "types" },
-  { id: 2, name: "type2", model: "types" },
+  // { id: 1, name: "type1", model: "types" },
+  // { id: 2, name: "type2", model: "types" },
   { id: 3, name: "generation", model: "generations" },
   { id: 4, name: "hair", model: "hairs" },
   { id: 5, name: "beard", model: "beards" },
   { id: 6, name: "house", model: "houses" },
   { id: 7, name: "engagement", model: "engagements" },
+  { id: 8, name: "season", model: "seasons" },
+  { id: 9, name: "zodiac", model: "zodiacs" },
 ];
 
 const types = [
@@ -74,6 +76,28 @@ const engagements = [
   { id: 2, name: "Non fidanzat*" },
 ];
 
+const seasons = [
+  { id: 1, name: "Nato in Primavera" },
+  { id: 2, name: "Nato in Estate" },
+  { id: 3, name: "Nato in Autunno" },
+  { id: 4, name: "Nato in Inverno" },
+];
+
+const zodiacs = [
+  { id: 1, name: "Segno Acquario" },
+  { id: 2, name: "Segno Pesci" },
+  { id: 3, name: "Segno Ariete" },
+  { id: 4, name: "Segno Toro" },
+  { id: 5, name: "Segno Gemelli" },
+  { id: 6, name: "Segno Cancro" },
+  { id: 7, name: "Segno Leone" },
+  { id: 8, name: "Segno Vergine" },
+  { id: 9, name: "Segno Bilancia" },
+  { id: 10, name: "Segno Scorpione" },
+  { id: 11, name: "Segno Sagittario" },
+  { id: 12, name: "Segno Capricorno" },
+];
+
 const friends = [
   {
     id: 1,
@@ -85,6 +109,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 1,
+    season: 4,
+    zodiac: 2,
   },
   {
     id: 2,
@@ -96,6 +122,8 @@ const friends = [
     beard: 1,
     house: 2,
     engagement: 1,
+    season: 2,
+    zodiac: 6,
   },
   {
     id: 3,
@@ -107,6 +135,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 2,
+    season: 3,
+    zodiac: 10,
   },
   {
     id: 4,
@@ -118,6 +148,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 2,
+    season: 2,
+    zodiac: 8,
   },
   {
     id: 5,
@@ -129,6 +161,8 @@ const friends = [
     beard: 2,
     house: 1,
     engagement: 2,
+    season: 2,
+    zodiac: 8,
   },
   {
     id: 6,
@@ -140,6 +174,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 2,
+    season: 4,
+    zodiac: 2,
   },
   {
     id: 7,
@@ -151,6 +187,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 2,
+    season: 2,
+    zodiac: 8,
   },
   {
     id: 8,
@@ -162,6 +200,8 @@ const friends = [
     beard: 1,
     house: 1,
     engagement: 1,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 9,
@@ -173,6 +213,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 2,
+    season: 2,
+    zodiac: 8,
   },
   {
     id: 10,
@@ -184,6 +226,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 1,
+    season: 4,
+    zodiac: 11,
   },
   {
     id: 11,
@@ -195,6 +239,8 @@ const friends = [
     beard: 2,
     house: 1,
     engagement: 2,
+    season: 2,
+    zodiac: 8,
   },
   {
     id: 12,
@@ -206,6 +252,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 1,
+    season: 2,
+    zodiac: 6,
   },
   {
     id: 13,
@@ -217,6 +265,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 1,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 14,
@@ -228,6 +278,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 1,
+    season: 2,
+    zodiac: 6,
   },
   {
     id: 15,
@@ -239,6 +291,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 2,
+    season: 4,
+    zodiac: 12,
   },
   {
     id: 16,
@@ -250,6 +304,8 @@ const friends = [
     beard: 2,
     house: 1,
     engagement: 1,
+    season: 2,
+    zodiac: 6,
   },
   {
     id: 17,
@@ -261,6 +317,8 @@ const friends = [
     beard: 1,
     house: 2,
     engagement: 2,
+    season: 3,
+    zodiac: 10,
   },
   {
     id: 18,
@@ -272,6 +330,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 2,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 19,
@@ -283,6 +343,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 1,
+    season: 2,
+    zodiac: 8,
   },
   {
     id: 19,
@@ -294,6 +356,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 2,
+    season: 4,
+    zodiac: 1,
   },
   {
     id: 21,
@@ -305,6 +369,8 @@ const friends = [
     beard: 2,
     house: 2,
     engagement: 2,
+    season: 2,
+    zodiac: 8,
   },
 ];
 
@@ -316,6 +382,8 @@ const data = {
   beards,
   houses,
   engagements,
+  seasons,
+  zodiacs,
   friends,
 };
 
@@ -358,6 +426,16 @@ function getEngagementById(id) {
   return engagements.find((engagement) => engagement.id === id);
 }
 
+// Season repository
+function getSeasonById(id) {
+  return seasons.find((season) => season.id === id);
+}
+
+// Zodiac repository
+function getZodiacById(id) {
+  return zodiacs.find((zodiac) => zodiac.id === id);
+}
+
 // Mappers
 const mapAttributesOnRepo = {
   1: getTypeById,
@@ -367,6 +445,8 @@ const mapAttributesOnRepo = {
   5: getBeardById,
   6: getHouseById,
   7: getEngagementById,
+  8: getSeasonById,
+  9: getZodiacById,
 };
 
 // States creation
