@@ -802,7 +802,7 @@ const renderBoard = () => {
   if (gameState.ps === 0) {
     // If the ps are over, disable all cells and make summary btn appear
     cells.forEach((cell) => cell.classList.add("disabled"));
-    extCornerRight.textContent = "RECAP DELLA PARTITA";
+    extCornerRight.textContent = "RECAP";
     extCornerRight.classList.add("summary");
     if (gameState.score === 9) {
       // If the user won, show the win modal
