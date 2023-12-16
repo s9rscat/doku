@@ -26,6 +26,7 @@ body {
   background-image: url("./assets/main.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: 90% 100%;
   overflow: hidden;
 }
 
@@ -48,10 +49,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  body {
-    background-position: 100% 100%;
-  }
-
   footer {
     padding-top: 1rem;
     font-size: var(--main-font-size-small-vw);
