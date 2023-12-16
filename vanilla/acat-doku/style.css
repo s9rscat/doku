@@ -272,7 +272,9 @@ footer {
   text-align: center;
   align-items: center;
   justify-content: center;
+  border: 2px solid var(--darker-color);
   border-radius: 100%;
+  background-color: var(--lighter-color);
 }
 
 .summary:hover {
