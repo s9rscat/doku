@@ -101,7 +101,7 @@ const zodiacs = [
 const friends = [
   {
     id: 1,
-    name: "Irene",
+    name: "Ire",
     type1: 5,
     type2: 6,
     generation: 4,
@@ -114,7 +114,7 @@ const friends = [
   },
   {
     id: 2,
-    name: "Mirco",
+    name: "Depa",
     type1: 1,
     type2: 7,
     generation: 1,
@@ -127,7 +127,7 @@ const friends = [
   },
   {
     id: 3,
-    name: "Paul",
+    name: "Pol",
     type1: 2,
     type2: 3,
     generation: 5,
@@ -140,7 +140,7 @@ const friends = [
   },
   {
     id: 4,
-    name: "Beps",
+    name: "Beppe",
     type1: 3,
     type2: 4,
     generation: 2,
@@ -231,7 +231,7 @@ const friends = [
   },
   {
     id: 11,
-    name: "Waldo",
+    name: "Ubi",
     type1: 1,
     type2: 2,
     generation: 2,
@@ -270,7 +270,7 @@ const friends = [
   },
   {
     id: 14,
-    name: "Giuli",
+    name: "Santy",
     type1: 6,
     type2: 7,
     generation: 3,
@@ -283,7 +283,7 @@ const friends = [
   },
   {
     id: 15,
-    name: "Marti",
+    name: "Marty",
     type1: 6,
     type2: 7,
     generation: 1,
@@ -309,7 +309,7 @@ const friends = [
   },
   {
     id: 17,
-    name: "Max",
+    name: "Narcos",
     type1: 6,
     type2: 2,
     generation: 4,
@@ -335,7 +335,7 @@ const friends = [
   },
   {
     id: 19,
-    name: "Michi",
+    name: "Miky",
     type1: 3,
     type2: 5,
     generation: 4,
@@ -348,7 +348,7 @@ const friends = [
   },
   {
     id: 19,
-    name: "Sem",
+    name: "Sam",
     type1: 5,
     type2: 6,
     generation: 3,
@@ -806,9 +806,26 @@ const renderBoard = () => {
       const cell = document.querySelector(`#cell-${r}-${c}`);
       const friendInCell = gameState[`cell-${r}-${c}`];
       // If the friend in the cell has already been found,
-      // set the right name to the cell and disable the button
+      // set the right name and sprite to the cell and disable the button
       if (friendInCell) {
-        cell.textContent = friendInCell;
+        cell.textContent = "";
+
+        // Clear everything in the cell
+        while (cell.lastElementChild) {
+          cell.removeChild(cell.lastElementChild);
+        }
+
+        // Set the sprite
+        const img = document.createElement("img");
+        img.setAttribute("src", `./assets/sprites/${friendInCell}.png`);
+        cell.appendChild(img);
+
+        // Set the name
+        const p = document.createElement("p");
+        p.textContent = friendInCell;
+        cell.appendChild(p);
+
+        // Disable the cell
         cell.classList.add("disabled");
         cell.removeEventListener("click", onCellClick);
       } else {
