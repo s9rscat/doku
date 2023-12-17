@@ -349,7 +349,7 @@ const friends = [
   },
   {
     id: 19,
-    name: "Sam",
+    name: "Sem",
     type1: 5,
     type2: 6,
     generation: 3,
@@ -401,19 +401,6 @@ const friends = [
   },
   {
     id: 24,
-    name: "Bea",
-    type1: 3,
-    type2: 7,
-    generation: 5,
-    hair: 2,
-    beard: 2,
-    house: 1,
-    engagement: 2,
-    season: 4,
-    zodiac: 12,
-  },
-  {
-    id: 25,
     name: "Tullio",
     type1: 4,
     type2: 5,
@@ -426,7 +413,7 @@ const friends = [
     zodiac: 3,
   },
   {
-    id: 26,
+    id: 25,
     name: "Rik",
     type1: 6,
     type2: 7,
@@ -439,7 +426,7 @@ const friends = [
     zodiac: 12,
   },
   {
-    id: 27,
+    id: 26,
     name: "Laura",
     type1: 6,
     type2: 7,
@@ -452,7 +439,7 @@ const friends = [
     zodiac: 3,
   },
   {
-    id: 28,
+    id: 27,
     name: "Franceschina",
     type1: 1,
     type2: 4,
@@ -465,7 +452,7 @@ const friends = [
     zodiac: 8,
   },
   {
-    id: 29,
+    id: 28,
     name: "Ruben",
     type1: 1,
     type2: 5,
@@ -478,7 +465,7 @@ const friends = [
     zodiac: 8,
   },
   {
-    id: 30,
+    id: 29,
     name: "Davi",
     type1: 2,
     type2: 6,
@@ -491,7 +478,7 @@ const friends = [
     zodiac: 8,
   },
   {
-    id: 31,
+    id: 30,
     name: "Alessio",
     type1: 2,
     type2: 5,
@@ -504,7 +491,7 @@ const friends = [
     zodiac: 4,
   },
   {
-    id: 32,
+    id: 31,
     name: "Cigno",
     type1: 3,
     type2: 6,
@@ -517,7 +504,7 @@ const friends = [
     zodiac: 4,
   },
   {
-    id: 33,
+    id: 32,
     name: "Ele",
     type1: 4,
     type2: 7,
