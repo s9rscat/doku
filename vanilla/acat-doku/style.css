@@ -223,6 +223,11 @@ footer {
   aspect-ratio: 1;
 }
 
+.cell-sprite {
+  max-width: 100px;
+  max-width: 100px;
+}
+
 @media (max-width: 768px) {
   .frame {
     padding: 0.5rem;
@@ -230,6 +235,11 @@ footer {
 
   .inside {
     padding: 0.5rem;
+  }
+
+  .cell-sprite {
+    max-width: 45px;
+    max-height: 45px;
   }
 }
 

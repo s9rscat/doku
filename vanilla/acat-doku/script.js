@@ -961,6 +961,7 @@ const renderBoard = () => {
 
         // Set the sprite
         const img = document.createElement("img");
+        img.classList.add("cell-sprite");
         img.setAttribute("src", `./assets/sprites/${friendInCell}.png`);
         cell.appendChild(img);
 
