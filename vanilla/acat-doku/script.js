@@ -738,6 +738,12 @@ function getFrame() {
       variant,
       attribute,
     });
+
+    // Push the used variant in used attribute variants
+    usedAttributeVariants.push({
+      attributeId: attribute.id,
+      variantId: variant.id,
+    });
   }
 
   return { rowAttributeVariants, colAttributeVariants };
