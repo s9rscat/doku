@@ -234,12 +234,12 @@ footer {
   }
 
   .inside {
-    padding: 0.5rem;
+    padding: 0.2rem;
   }
 
   .cell-sprite {
-    max-width: 45px;
-    max-height: 45px;
+    max-width: 35px;
+    max-height: 35px;
   }
 }
 

@@ -207,6 +207,7 @@ footer {
   color: var(--medium-dark-color);
   background-color: var(--lighter-color);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -224,13 +225,23 @@ footer {
   aspect-ratio: 1;
 }
 
+.cell-sprite {
+  max-width: 100px;
+  max-width: 100px;
+}
+
 @media (max-width: 768px) {
   .frame {
     padding: 0.5rem;
   }
 
   .inside {
-    padding: 0.5rem;
+    padding: 0.2rem;
+  }
+
+  .cell-sprite {
+    max-width: 35px;
+    max-width: 35px;
   }
 }
 

@@ -211,7 +211,7 @@ const friends = [
   },
   {
     id: 13,
-    name: "Ale B.",
+    name: "Ale B",
     gender: 1,
     hair: 1,
     beard: 2,
@@ -285,6 +285,17 @@ const friends = [
     job: 4,
     house: 2,
     engagement: 2,
+  },
+  {
+    id: 20,
+    name: "Denise",
+    gender: 1,
+    hair: 2,
+    beard: 2,
+    generation: 1,
+    job: 3,
+    house: 1,
+    engagement: 1,
   },
 ];
 
@@ -724,7 +735,25 @@ const renderBoard = () => {
       // If the friend in the cell has already been found,
       // set the right name to the cell and disable the button
       if (friendInCell) {
-        cell.textContent = friendInCell;
+        cell.textContent = "";
+
+        // Clear everything in the cell
+        while (cell.lastElementChild) {
+          cell.removeChild(cell.lastElementChild);
+        }
+
+        // Set the sprite
+        const img = document.createElement("img");
+        img.classList.add("cell-sprite");
+        img.setAttribute("src", `./assets/sprites/${friendInCell}.png`);
+        cell.appendChild(img);
+
+        // Set the name
+        const p = document.createElement("p");
+        p.textContent = friendInCell;
+        cell.appendChild(p);
+
+        // Disable the cell
         cell.classList.add("disabled");
         cell.removeEventListener("click", onCellClick);
       } else {
