@@ -29,6 +29,8 @@ const friendAttributes = [
   { id: 4, name: "job", model: "jobs" },
   { id: 5, name: "house", model: "houses" },
   { id: 6, name: "engagement", model: "engagements" },
+  { id: 7, name: "season", model: "seasons" },
+  { id: 8, name: "zodiac", model: "zodiacs" },
 ];
 
 const genders = [
@@ -70,6 +72,28 @@ const engagements = [
   { id: 2, name: "Non fidanzat*" },
 ];
 
+const seasons = [
+  { id: 1, name: "Nato in Primavera" },
+  { id: 2, name: "Nato in Estate" },
+  { id: 3, name: "Nato in Autunno" },
+  { id: 4, name: "Nato in Inverno" },
+];
+
+const zodiacs = [
+  { id: 1, name: "Aquarius" },
+  { id: 2, name: "Pisces" },
+  { id: 3, name: "Aries" },
+  { id: 4, name: "Tauros" },
+  { id: 5, name: "Gemini" },
+  { id: 6, name: "Cancer" },
+  { id: 7, name: "Leo" },
+  { id: 8, name: "Virgo" },
+  { id: 9, name: "Libra" },
+  { id: 10, name: "Scorpio" },
+  { id: 11, name: "Sagitter" },
+  { id: 12, name: "Capricorn" },
+];
+
 const friends = [
   {
     id: 1,
@@ -80,6 +104,8 @@ const friends = [
     job: 3,
     house: 1,
     engagement: 1,
+    season: 4,
+    zodiac: 12,
   },
   {
     id: 2,
@@ -90,6 +116,8 @@ const friends = [
     job: 2,
     house: 2,
     engagement: 2,
+    season: 2,
+    zodiac: 7,
   },
   {
     id: 3,
@@ -100,6 +128,8 @@ const friends = [
     job: 1,
     house: 2,
     engagement: 1,
+    season: 4,
+    zodiac: 12,
   },
   {
     id: 4,
@@ -110,6 +140,8 @@ const friends = [
     job: 4,
     house: 2,
     engagement: 1,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 5,
@@ -120,6 +152,8 @@ const friends = [
     job: 3,
     house: 1,
     engagement: 2,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 6,
@@ -130,6 +164,8 @@ const friends = [
     job: 3,
     house: 2,
     engagement: 1,
+    season: 2,
+    zodiac: 6,
   },
   {
     id: 7,
@@ -140,6 +176,8 @@ const friends = [
     job: 4,
     house: 1,
     engagement: 1,
+    season: 4,
+    zodiac: 12,
   },
   {
     id: 8,
@@ -150,6 +188,8 @@ const friends = [
     job: 2,
     house: 2,
     engagement: 1,
+    season: 4,
+    zodiac: 12,
   },
   {
     id: 9,
@@ -160,6 +200,8 @@ const friends = [
     job: 2,
     house: 1,
     engagement: 1,
+    season: 4,
+    zodiac: 12,
   },
   {
     id: 10,
@@ -170,6 +212,8 @@ const friends = [
     job: 4,
     house: 2,
     engagement: 2,
+    season: 4,
+    zodiac: 12,
   },
   {
     id: 11,
@@ -180,6 +224,8 @@ const friends = [
     job: 4,
     house: 2,
     engagement: 2,
+    season: 4,
+    zodiac: 12,
   },
   {
     id: 12,
@@ -190,6 +236,8 @@ const friends = [
     job: 5,
     house: 2,
     engagement: 1,
+    season: 4,
+    zodiac: 12,
   },
   {
     id: 13,
@@ -200,6 +248,8 @@ const friends = [
     job: 1,
     house: 2,
     engagement: 1,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 14,
@@ -210,6 +260,8 @@ const friends = [
     job: 4,
     house: 1,
     engagement: 1,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 15,
@@ -220,6 +272,8 @@ const friends = [
     job: 1,
     house: 2,
     engagement: 1,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 16,
@@ -230,6 +284,8 @@ const friends = [
     job: 4,
     house: 1,
     engagement: 1,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 17,
@@ -240,6 +296,8 @@ const friends = [
     job: 1,
     house: 2,
     engagement: 1,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 18,
@@ -250,6 +308,8 @@ const friends = [
     job: 1,
     house: 1,
     engagement: 1,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 19,
@@ -260,6 +320,8 @@ const friends = [
     job: 4,
     house: 2,
     engagement: 2,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 20,
@@ -270,6 +332,8 @@ const friends = [
     job: 3,
     house: 1,
     engagement: 1,
+    season: 1,
+    zodiac: 3,
   },
 ];
 
@@ -281,6 +345,8 @@ const data = {
   jobs,
   houses,
   engagements,
+  seasons,
+  zodiacs,
   friends,
 };
 
@@ -323,6 +389,16 @@ function getEngagementById(id) {
   return engagements.find((engagement) => engagement.id === id);
 }
 
+// Season repository
+function getSeasonById(id) {
+  return seasons.find((season) => season.id === id);
+}
+
+// Zodiac repository
+function getZodiacById(id) {
+  return zodiacs.find((zodiac) => zodiac.id === id);
+}
+
 // Mappers
 const mapAttributesOnRepo = {
   1: getGenderById,
@@ -331,6 +407,8 @@ const mapAttributesOnRepo = {
   4: getJobById,
   5: getHouseById,
   6: getEngagementById,
+  7: getSeasonById,
+  8: getZodiacById,
 };
 
 // States creation
