@@ -25,11 +25,10 @@ function getToday() {
 const friendAttributes = [
   { id: 1, name: "gender", model: "genders" },
   { id: 2, name: "hair", model: "hairs" },
-  { id: 3, name: "beard", model: "beards" },
-  { id: 4, name: "generation", model: "generations" },
-  { id: 5, name: "job", model: "jobs" },
-  { id: 6, name: "house", model: "houses" },
-  { id: 7, name: "engagement", model: "engagements" },
+  { id: 3, name: "generation", model: "generations" },
+  { id: 4, name: "job", model: "jobs" },
+  { id: 5, name: "house", model: "houses" },
+  { id: 6, name: "engagement", model: "engagements" },
 ];
 
 const genders = [
@@ -41,11 +40,6 @@ const hairs = [
   { id: 1, name: "Capelli biondi" },
   { id: 2, name: "Capelli castani" },
   { id: 3, name: "Capelli neri" },
-];
-
-const beards = [
-  { id: 1, name: "Ha la barba" },
-  { id: 2, name: "Non ha la barba" },
 ];
 
 const generations = [
@@ -82,7 +76,6 @@ const friends = [
     name: "Ste",
     gender: 2,
     hair: 2,
-    beard: 1,
     generation: 1,
     job: 3,
     house: 1,
@@ -93,7 +86,6 @@ const friends = [
     name: "Andre",
     gender: 2,
     hair: 3,
-    beard: 2,
     generation: 1,
     job: 2,
     house: 2,
@@ -104,7 +96,6 @@ const friends = [
     name: "Dani",
     gender: 2,
     hair: 2,
-    beard: 1,
     generation: 1,
     job: 1,
     house: 2,
@@ -115,7 +106,6 @@ const friends = [
     name: "Tia",
     gender: 2,
     hair: 3,
-    beard: 2,
     generation: 1,
     job: 4,
     house: 2,
@@ -126,7 +116,6 @@ const friends = [
     name: "Tiz",
     gender: 2,
     hair: 2,
-    beard: 1,
     generation: 1,
     job: 3,
     house: 1,
@@ -137,7 +126,6 @@ const friends = [
     name: "Depa",
     gender: 2,
     hair: 2,
-    beard: 1,
     generation: 1,
     job: 3,
     house: 2,
@@ -148,7 +136,6 @@ const friends = [
     name: "Giulia",
     gender: 1,
     hair: 2,
-    beard: 2,
     generation: 1,
     job: 4,
     house: 1,
@@ -159,7 +146,6 @@ const friends = [
     name: "Gheba",
     gender: 2,
     hair: 3,
-    beard: 1,
     generation: 2,
     job: 2,
     house: 2,
@@ -170,7 +156,6 @@ const friends = [
     name: "Popo",
     gender: 2,
     hair: 2,
-    beard: 2,
     generation: 2,
     job: 2,
     house: 1,
@@ -181,7 +166,6 @@ const friends = [
     name: "Batti",
     gender: 2,
     hair: 2,
-    beard: 2,
     generation: 2,
     job: 4,
     house: 2,
@@ -192,7 +176,6 @@ const friends = [
     name: "Vitto",
     gender: 2,
     hair: 3,
-    beard: 2,
     generation: 1,
     job: 4,
     house: 2,
@@ -203,7 +186,6 @@ const friends = [
     name: "Irene",
     gender: 1,
     hair: 3,
-    beard: 2,
     generation: 4,
     job: 5,
     house: 2,
@@ -214,7 +196,6 @@ const friends = [
     name: "Ale B",
     gender: 1,
     hair: 1,
-    beard: 2,
     generation: 5,
     job: 1,
     house: 2,
@@ -225,7 +206,6 @@ const friends = [
     name: "Matteo",
     gender: 2,
     hair: 3,
-    beard: 2,
     generation: 1,
     job: 4,
     house: 1,
@@ -236,7 +216,6 @@ const friends = [
     name: "Ale",
     gender: 1,
     hair: 2,
-    beard: 2,
     generation: 7,
     job: 1,
     house: 2,
@@ -247,7 +226,6 @@ const friends = [
     name: "Giulio",
     gender: 2,
     hair: 3,
-    beard: 1,
     generation: 1,
     job: 4,
     house: 1,
@@ -258,7 +236,6 @@ const friends = [
     name: "Viola",
     gender: 1,
     hair: 2,
-    beard: 2,
     generation: 7,
     job: 1,
     house: 2,
@@ -269,7 +246,6 @@ const friends = [
     name: "Matilde",
     gender: 1,
     hair: 2,
-    beard: 2,
     generation: 4,
     job: 1,
     house: 1,
@@ -280,7 +256,6 @@ const friends = [
     name: "Dina",
     gender: 1,
     hair: 3,
-    beard: 2,
     generation: 1,
     job: 4,
     house: 2,
@@ -291,7 +266,6 @@ const friends = [
     name: "Denise",
     gender: 1,
     hair: 2,
-    beard: 2,
     generation: 1,
     job: 3,
     house: 1,
@@ -303,7 +277,6 @@ const data = {
   friendAttributes,
   genders,
   hairs,
-  beards,
   generations,
   jobs,
   houses,
@@ -330,11 +303,6 @@ function getHairById(id) {
   return hairs.find((hair) => hair.id === id);
 }
 
-// Beard repository
-function getBeardById(id) {
-  return beards.find((beard) => beard.id === id);
-}
-
 // Generation repository
 function getGenerationById(id) {
   return generations.find((generation) => generation.id === id);
@@ -359,11 +327,10 @@ function getEngagementById(id) {
 const mapAttributesOnRepo = {
   1: getGenderById,
   2: getHairById,
-  3: getBeardById,
-  4: getGenerationById,
-  5: getJobById,
-  6: getHouseById,
-  7: getEngagementById,
+  3: getGenerationById,
+  4: getJobById,
+  5: getHouseById,
+  6: getEngagementById,
 };
 
 // States creation
