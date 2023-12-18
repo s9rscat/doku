@@ -915,24 +915,12 @@ const renderBoard = () => {
   const gameState = getGameState();
 
   // Render values in the external frame
-  extRow0.textContent = mapAttributesOnRepo[gameState.row0.attribute.id](
-    gameState.row0.variant.id
-  ).name;
-  extRow1.textContent = mapAttributesOnRepo[gameState.row1.attribute.id](
-    gameState.row1.variant.id
-  ).name;
-  extRow2.textContent = mapAttributesOnRepo[gameState.row2.attribute.id](
-    gameState.row2.variant.id
-  ).name;
-  extCol0.textContent = mapAttributesOnRepo[gameState.col0.attribute.id](
-    gameState.col0.variant.id
-  ).name;
-  extCol1.textContent = mapAttributesOnRepo[gameState.col1.attribute.id](
-    gameState.col1.variant.id
-  ).name;
-  extCol2.textContent = mapAttributesOnRepo[gameState.col2.attribute.id](
-    gameState.col2.variant.id
-  ).name;
+  extRow0.textContent = gameState.row0.variant.name;
+  extRow1.textContent = gameState.row1.variant.name;
+  extRow2.textContent = gameState.row2.variant.name;
+  extCol0.textContent = gameState.col0.variant.name;
+  extCol1.textContent = gameState.col1.variant.name;
+  extCol2.textContent = gameState.col2.variant.name;
   psCell.textContent = `Punti vita: ${gameState.ps}`;
   scoreCell.textContent = `Punti: ${gameState.score}`;
   if (gameState.ps === 0) {
