@@ -30,6 +30,9 @@ const friendAttributes = [
   { id: 5, name: "curriculum", model: "curricula" },
   { id: 6, name: "zanco", model: "zanco" },
   { id: 7, name: "origin", model: "origins" },
+  { id: 8, name: "pep", model: "peps" },
+  { id: 9, name: "season", model: "seasons" },
+  { id: 10, name: "zodiac", model: "zodiacs" },
 ];
 
 const genders = [
@@ -87,7 +90,27 @@ const peps = [
   },
 ];
 
-// const erasmus =
+const seasons = [
+  { id: 1, name: "Nato in Primavera" },
+  { id: 2, name: "Nato in Estate" },
+  { id: 3, name: "Nato in Autunno" },
+  { id: 4, name: "Nato in Inverno" },
+];
+
+const zodiacs = [
+  { id: 1, name: "Aquarius" },
+  { id: 2, name: "Pisces" },
+  { id: 3, name: "Aries" },
+  { id: 4, name: "Tauros" },
+  { id: 5, name: "Gemini" },
+  { id: 6, name: "Cancer" },
+  { id: 7, name: "Leo" },
+  { id: 8, name: "Virgo" },
+  { id: 9, name: "Libra" },
+  { id: 10, name: "Scorpio" },
+  { id: 11, name: "Sagitter" },
+  { id: 12, name: "Capricorn" },
+];
 
 const friends = [
   {
@@ -101,6 +124,8 @@ const friends = [
     zanco: 1,
     origin: 3,
     peps: 3,
+    season: 3,
+    zodiac: 10,
   },
   {
     id: 2,
@@ -113,6 +138,8 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 1,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 3,
@@ -125,6 +152,8 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 3,
+    season: 3,
+    zodiac: 10,
   },
   {
     id: 4,
@@ -137,6 +166,8 @@ const friends = [
     zanco: 1,
     origin: 3,
     peps: 1,
+    season: 3,
+    zodiac: 1,
   },
   {
     id: 5,
@@ -149,6 +180,8 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 3,
+    season: 3,
+    zodiac: 10,
   },
   {
     id: 6,
@@ -161,6 +194,8 @@ const friends = [
     zanco: 1,
     origin: 2,
     peps: 3,
+    season: 2,
+    zodiac: 6,
   },
   {
     id: 7,
@@ -173,6 +208,8 @@ const friends = [
     zanco: 2,
     origin: 1,
     peps: 3,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 8,
@@ -185,6 +222,8 @@ const friends = [
     zanco: 2,
     origin: 5,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 9,
@@ -197,6 +236,8 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 10,
@@ -209,6 +250,8 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 11,
@@ -221,6 +264,8 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 1,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 12,
@@ -233,6 +278,8 @@ const friends = [
     zanco: 1,
     origin: 4,
     peps: 3,
+    season: 3,
+    zodiac: 11,
   },
   {
     id: 13,
@@ -245,6 +292,8 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 14,
@@ -257,6 +306,8 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 3,
+    season: 1,
+    zodiac: 4,
   },
   {
     id: 15,
@@ -269,6 +320,8 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 16,
@@ -281,6 +334,8 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 17,
@@ -293,6 +348,8 @@ const friends = [
     zanco: 2,
     origin: 1,
     peps: 3,
+    season: 2,
+    zodiac: 7,
   },
   {
     id: 18,
@@ -305,6 +362,8 @@ const friends = [
     zanco: 1,
     origin: 2,
     peps: 1,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 19,
@@ -317,6 +376,8 @@ const friends = [
     zanco: 2,
     origin: 1,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 19,
@@ -329,6 +390,8 @@ const friends = [
     zanco: 1,
     origin: 2,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 21,
@@ -341,6 +404,8 @@ const friends = [
     zanco: 2,
     origin: 6,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 22,
@@ -353,6 +418,8 @@ const friends = [
     zanco: 2,
     origin: 1,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 23,
@@ -365,6 +432,8 @@ const friends = [
     zanco: 2,
     origin: 6,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
   {
     id: 24,
@@ -377,6 +446,8 @@ const friends = [
     zanco: 2,
     origin: 6,
     peps: 3,
+    season: 3,
+    zodiac: 9,
   },
 ];
 
@@ -389,6 +460,9 @@ const data = {
   curricula,
   zanco,
   origins,
+  peps,
+  seasons,
+  zodiacs,
   friends,
 };
 
@@ -441,6 +515,16 @@ function getPepById(id) {
   return peps.find((pep) => pep.id === id);
 }
 
+// Season repository
+function getSeasonById(id) {
+  return seasons.find((season) => season.id === id);
+}
+
+// Zodiac repository
+function getZodiacById(id) {
+  return zodiacs.find((zodiac) => zodiac.id === id);
+}
+
 // Mappers
 const mapAttributesOnRepo = {
   1: getGenderById,
@@ -451,6 +535,8 @@ const mapAttributesOnRepo = {
   6: getZancoById,
   7: getOriginById,
   8: getPepById,
+  9: getSeasonById,
+  10: getZodiacById,
 };
 
 // States creation
