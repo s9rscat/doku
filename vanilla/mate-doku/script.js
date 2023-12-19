@@ -72,12 +72,12 @@ const zanco = [
 ];
 
 const origins = [
-  { id: 1, name: "Origine milanese" },
-  { id: 2, name: "Origine brianzola" },
-  { id: 3, name: "Origine comasca/lecchese/varesotta" },
-  { id: 4, name: "Origine bergamasca/bresciana" },
-  { id: 5, name: "Origine lodigiano/pavese" },
-  { id: 6, name: "Origine extra-lombarda" },
+  { id: 1, name: "Origini MI" },
+  { id: 2, name: "Origini MB" },
+  { id: 3, name: "Origini CO/LC/VA" },
+  { id: 4, name: "Origini BG/BR" },
+  { id: 5, name: "Origini LO/PV" },
+  { id: 6, name: "Origini extra-lombarda" },
 ];
 
 const peps = [
