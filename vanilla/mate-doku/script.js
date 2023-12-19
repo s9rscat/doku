@@ -1088,7 +1088,7 @@ const onFormSubmit = (e) => {
   closeFormModal();
 };
 
-const makeLogoSayFormula = () => {
+const makeLogoSay = () => {
   extCornerLeft.addEventListener("click", () => {
     alert("exp(iπ) + 1 = 0");
   });
@@ -1099,7 +1099,7 @@ const makeLogoSayFormula = () => {
 newGame();
 renderBoard();
 createFriendList();
-makeLogoSayFormula();
+makeLogoSay();
 
 // Add event listener to info button
 infoBtn.addEventListener("click", openInfoModal);

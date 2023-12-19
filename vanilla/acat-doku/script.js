@@ -1109,7 +1109,7 @@ const onFormSubmit = (e) => {
   closeFormModal();
 };
 
-const makeLogoSayMiao = () => {
+const makeLogoSay = () => {
   extCornerLeft.addEventListener("click", () => {
     alert("MIAO!");
   });
@@ -1120,7 +1120,7 @@ const makeLogoSayMiao = () => {
 newGame();
 renderBoard();
 createFriendList();
-makeLogoSayMiao();
+makeLogoSay();
 
 // Add event listener to info button
 infoBtn.addEventListener("click", openInfoModal);

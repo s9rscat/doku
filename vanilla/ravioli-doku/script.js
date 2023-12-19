@@ -978,7 +978,7 @@ const onFormSubmit = (e) => {
   closeFormModal();
 };
 
-const makeLogoSayFormula = () => {
+const makeLogoSay = () => {
   extCornerLeft.addEventListener("click", () => {
     alert("Cuocimi al vapore!");
   });
@@ -989,7 +989,7 @@ const makeLogoSayFormula = () => {
 newGame();
 renderBoard();
 createFriendList();
-makeLogoSayFormula();
+makeLogoSay();
 
 // Add event listener to info button
 infoBtn.addEventListener("click", openInfoModal);
