@@ -166,7 +166,7 @@ const friends = [
     zanco: 1,
     origin: 3,
     peps: 1,
-    season: 3,
+    season: 4,
     zodiac: 1,
   },
   {
@@ -208,8 +208,8 @@ const friends = [
     zanco: 2,
     origin: 1,
     peps: 3,
-    season: 1,
-    zodiac: 3,
+    season: 4,
+    zodiac: 2,
   },
   {
     id: 8,
@@ -236,8 +236,8 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 3,
-    season: 3,
-    zodiac: 9,
+    season: 1,
+    zodiac: 5,
   },
   {
     id: 10,
@@ -265,7 +265,7 @@ const friends = [
     origin: 1,
     peps: 1,
     season: 3,
-    zodiac: 9,
+    zodiac: 10,
   },
   {
     id: 12,
@@ -362,8 +362,8 @@ const friends = [
     zanco: 1,
     origin: 2,
     peps: 1,
-    season: 3,
-    zodiac: 9,
+    season: 1,
+    zodiac: 3,
   },
   {
     id: 19,
@@ -377,7 +377,7 @@ const friends = [
     origin: 1,
     peps: 3,
     season: 3,
-    zodiac: 9,
+    zodiac: 10,
   },
   {
     id: 19,
@@ -404,8 +404,8 @@ const friends = [
     zanco: 2,
     origin: 6,
     peps: 3,
-    season: 3,
-    zodiac: 9,
+    season: 1,
+    zodiac: 4,
   },
   {
     id: 22,
@@ -418,8 +418,8 @@ const friends = [
     zanco: 2,
     origin: 1,
     peps: 3,
-    season: 3,
-    zodiac: 9,
+    season: 1,
+    zodiac: 2,
   },
   {
     id: 23,
@@ -432,8 +432,8 @@ const friends = [
     zanco: 2,
     origin: 6,
     peps: 3,
-    season: 3,
-    zodiac: 9,
+    season: 1,
+    zodiac: 5,
   },
   {
     id: 24,
@@ -449,6 +449,20 @@ const friends = [
     season: 3,
     zodiac: 9,
   },
+  // {
+  //   id: 25,
+  //   name: "Anna Cascarano",
+  //   gender: 1,
+  //   hair: 2,
+  //   location: 2,
+  //   degree: 2,
+  //   curriculum: 2,
+  //   zanco: 1,
+  //   origin: 1,
+  //   peps: 3,
+  //   season: 3,
+  //   zodiac: 9,
+  // },
 ];
 
 const data = {
