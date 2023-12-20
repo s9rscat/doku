@@ -588,6 +588,20 @@ const friends = [
     season: 4,
     zodiac: 12,
   },
+  {
+    id: 35,
+    name: "Silvia Muraca",
+    gender: 1,
+    hair: 1,
+    location: 1,
+    degree: 2,
+    curriculum: 2,
+    zanco: 2,
+    origin: 3,
+    peps: 3,
+    season: 4,
+    zodiac: 12,
+  },
 ];
 
 const data = {
