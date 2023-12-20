@@ -26,11 +26,10 @@ const friendAttributes = [
   { id: 1, name: "gender", model: "genders", hasImg: false },
   { id: 2, name: "hair", model: "hairs", hasImg: false },
   { id: 3, name: "generation", model: "generations", hasImg: false },
-  { id: 4, name: "job", model: "jobs", hasImg: false },
-  { id: 5, name: "house", model: "houses", hasImg: false },
-  { id: 6, name: "engagement", model: "engagements", hasImg: false },
-  { id: 7, name: "season", model: "seasons", hasImg: false },
-  { id: 8, name: "zodiac", model: "zodiacs", hasImg: true },
+  { id: 4, name: "house", model: "houses", hasImg: false },
+  { id: 5, name: "engagement", model: "engagements", hasImg: false },
+  { id: 6, name: "season", model: "seasons", hasImg: false },
+  { id: 7, name: "zodiac", model: "zodiacs", hasImg: true },
 ];
 
 const genders = [
@@ -52,14 +51,6 @@ const generations = [
   { id: 5, name: "Quinta generazione (1998)" },
   { id: 6, name: "Fossile (< 1994)" },
   { id: 7, name: "Futuristico (> 1998)" },
-];
-
-const jobs = [
-  { id: 1, name: "Studente" },
-  { id: 2, name: "Lavora a scuola" },
-  { id: 3, name: "Developer" },
-  { id: 4, name: "Altro lavoro" },
-  { id: 5, name: "Disoccupat*" },
 ];
 
 const houses = [
@@ -101,7 +92,6 @@ const friends = [
     gender: 2,
     hair: 2,
     generation: 1,
-    job: 3,
     house: 1,
     engagement: 1,
     season: 4,
@@ -113,7 +103,6 @@ const friends = [
     gender: 2,
     hair: 3,
     generation: 1,
-    job: 2,
     house: 2,
     engagement: 2,
     season: 2,
@@ -125,7 +114,6 @@ const friends = [
     gender: 2,
     hair: 2,
     generation: 1,
-    job: 1,
     house: 2,
     engagement: 1,
     season: 4,
@@ -137,7 +125,6 @@ const friends = [
     gender: 2,
     hair: 3,
     generation: 1,
-    job: 4,
     house: 2,
     engagement: 1,
     season: 1,
@@ -149,7 +136,6 @@ const friends = [
     gender: 2,
     hair: 2,
     generation: 1,
-    job: 3,
     house: 1,
     engagement: 2,
     season: 1,
@@ -161,7 +147,6 @@ const friends = [
     gender: 2,
     hair: 2,
     generation: 1,
-    job: 3,
     house: 2,
     engagement: 1,
     season: 2,
@@ -173,7 +158,6 @@ const friends = [
     gender: 1,
     hair: 2,
     generation: 1,
-    job: 4,
     house: 1,
     engagement: 1,
     season: 4,
@@ -185,7 +169,6 @@ const friends = [
     gender: 2,
     hair: 3,
     generation: 2,
-    job: 2,
     house: 2,
     engagement: 1,
     season: 4,
@@ -197,7 +180,6 @@ const friends = [
     gender: 2,
     hair: 2,
     generation: 2,
-    job: 2,
     house: 1,
     engagement: 1,
     season: 4,
@@ -209,7 +191,6 @@ const friends = [
     gender: 2,
     hair: 2,
     generation: 2,
-    job: 4,
     house: 2,
     engagement: 2,
     season: 4,
@@ -221,7 +202,6 @@ const friends = [
     gender: 2,
     hair: 3,
     generation: 1,
-    job: 4,
     house: 2,
     engagement: 2,
     season: 4,
@@ -233,7 +213,6 @@ const friends = [
     gender: 1,
     hair: 3,
     generation: 4,
-    job: 5,
     house: 2,
     engagement: 1,
     season: 4,
@@ -245,7 +224,6 @@ const friends = [
     gender: 1,
     hair: 1,
     generation: 5,
-    job: 1,
     house: 2,
     engagement: 1,
     season: 1,
@@ -257,7 +235,6 @@ const friends = [
     gender: 2,
     hair: 3,
     generation: 1,
-    job: 4,
     house: 1,
     engagement: 1,
     season: 1,
@@ -269,7 +246,6 @@ const friends = [
     gender: 1,
     hair: 2,
     generation: 7,
-    job: 1,
     house: 2,
     engagement: 1,
     season: 1,
@@ -281,7 +257,6 @@ const friends = [
     gender: 2,
     hair: 3,
     generation: 1,
-    job: 4,
     house: 1,
     engagement: 1,
     season: 1,
@@ -293,7 +268,6 @@ const friends = [
     gender: 1,
     hair: 2,
     generation: 7,
-    job: 1,
     house: 2,
     engagement: 1,
     season: 1,
@@ -305,7 +279,6 @@ const friends = [
     gender: 1,
     hair: 2,
     generation: 4,
-    job: 1,
     house: 1,
     engagement: 1,
     season: 1,
@@ -317,7 +290,6 @@ const friends = [
     gender: 1,
     hair: 3,
     generation: 1,
-    job: 4,
     house: 2,
     engagement: 2,
     season: 1,
@@ -329,7 +301,6 @@ const friends = [
     gender: 1,
     hair: 2,
     generation: 1,
-    job: 3,
     house: 1,
     engagement: 1,
     season: 1,
@@ -342,7 +313,6 @@ const data = {
   genders,
   hairs,
   generations,
-  jobs,
   houses,
   engagements,
   seasons,
@@ -374,11 +344,6 @@ function getGenerationById(id) {
   return generations.find((generation) => generation.id === id);
 }
 
-// Job repository
-function getJobById(id) {
-  return jobs.find((job) => job.id === id);
-}
-
 // House repository
 function getHouseById(id) {
   return houses.find((house) => house.id === id);
@@ -404,11 +369,10 @@ const mapAttributesOnRepo = {
   1: getGenderById,
   2: getHairById,
   3: getGenerationById,
-  4: getJobById,
-  5: getHouseById,
-  6: getEngagementById,
-  7: getSeasonById,
-  8: getZodiacById,
+  4: getHouseById,
+  5: getEngagementById,
+  6: getSeasonById,
+  7: getZodiacById,
 };
 
 // States creation
