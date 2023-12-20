@@ -223,13 +223,13 @@ It also holds all the modals.
 }
 
 .cell-img {
-  max-width: 90px;
-  max-width: 90px;
+  max-width: 80px;
+  max-height: 80px;
 }
 
 .cell-sprite {
   max-width: 100px;
-  max-width: 100px;
+  max-height: 100px;
 }
 
 @media (max-width: 768px) {
@@ -242,13 +242,13 @@ It also holds all the modals.
   }
 
   .cell-img {
-    max-width: 35px;
-    max-width: 35px;
+    max-width: 40px;
+    max-height: 40px;
   }
 
   .cell-sprite {
     max-width: 40px;
-    max-width: 40px;
+    max-height: 40px;
   }
 }
 
