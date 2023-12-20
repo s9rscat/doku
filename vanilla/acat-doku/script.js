@@ -872,11 +872,12 @@ const renderFrameCell = (gameState, cell, cellName) => {
 
   if (cellAttribute.hasImg) {
     const img = document.createElement("img");
-    img.classList.add("cell-sprite");
+    img.classList.add("cell-img");
     img.setAttribute(
       "src",
       `./assets/${cellAttribute.model}/${cellVariant.name}.png`
     );
+    img.setAttribute("alt", cellVariant.name);
     cell.appendChild(img);
   } else {
     cell.textContent = cellVariant.name;
@@ -885,8 +886,6 @@ const renderFrameCell = (gameState, cell, cellName) => {
 
 const renderBoard = () => {
   const gameState = getGameState();
-
-  console.log(renderFrameCell(gameState, extRow0, "row0"));
 
   // Render values in the external frame
   renderFrameCell(gameState, extRow0, "row0");
