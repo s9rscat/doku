@@ -23,18 +23,18 @@ function getToday() {
 
 // Data
 const friendAttributes = [
-  { id: 1, name: "gender", model: "genders" },
-  { id: 2, name: "hair", model: "hairs" },
-  { id: 3, name: "location", model: "locations" },
-  { id: 4, name: "degree", model: "degrees" },
-  { id: 5, name: "curriculum", model: "curricula" },
-  { id: 6, name: "zanco", model: "zanco" },
-  { id: 7, name: "origin", model: "origins" },
-  { id: 8, name: "pep", model: "peps" },
-  { id: 9, name: "season", model: "seasons" },
-  { id: 10, name: "zodiac", model: "zodiacs" },
-  { id: 11, name: "erasmus", model: "erasmus" },
-  { id: 12, name: "glass", model: "glasses" },
+  { id: 1, name: "gender", model: "genders", hasImg: false },
+  { id: 2, name: "hair", model: "hairs", hasImg: false },
+  { id: 3, name: "location", model: "locations", hasImg: false },
+  { id: 4, name: "degree", model: "degrees", hasImg: false },
+  { id: 5, name: "curriculum", model: "curricula", hasImg: false },
+  { id: 6, name: "zanco", model: "zanco", hasImg: false },
+  { id: 7, name: "origin", model: "origins", hasImg: false },
+  { id: 8, name: "pep", model: "peps", hasImg: false },
+  { id: 9, name: "season", model: "seasons", hasImg: false },
+  { id: 10, name: "zodiac", model: "zodiacs", hasImg: true },
+  { id: 11, name: "erasmus", model: "erasmus", hasImg: false },
+  { id: 12, name: "glass", model: "glasses", hasImg: false },
 ];
 
 const genders = [

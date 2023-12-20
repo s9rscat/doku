@@ -23,14 +23,14 @@ function getToday() {
 
 // Data
 const friendAttributes = [
-  { id: 1, name: "gender", model: "genders" },
-  { id: 2, name: "hair", model: "hairs" },
-  { id: 3, name: "generation", model: "generations" },
-  { id: 4, name: "job", model: "jobs" },
-  { id: 5, name: "house", model: "houses" },
-  { id: 6, name: "engagement", model: "engagements" },
-  { id: 7, name: "season", model: "seasons" },
-  { id: 8, name: "zodiac", model: "zodiacs" },
+  { id: 1, name: "gender", model: "genders", hasImg: false },
+  { id: 2, name: "hair", model: "hairs", hasImg: false },
+  { id: 3, name: "generation", model: "generations", hasImg: false },
+  { id: 4, name: "job", model: "jobs", hasImg: false },
+  { id: 5, name: "house", model: "houses", hasImg: false },
+  { id: 6, name: "engagement", model: "engagements", hasImg: false },
+  { id: 7, name: "season", model: "seasons", hasImg: false },
+  { id: 8, name: "zodiac", model: "zodiacs", hasImg: true },
 ];
 
 const genders = [
@@ -733,16 +733,34 @@ const winModal = document.querySelector("#win-modal");
 const btnCloseWinModal = document.querySelector("#close-win-modal");
 
 // HELPER FUNCTIONS
+const renderFrameCell = (gameState, cell, cellName) => {
+  const cellAttribute = gameState[cellName].attribute;
+  const cellVariant = gameState[cellName].variant;
+
+  if (cellAttribute.hasImg) {
+    const img = document.createElement("img");
+    img.classList.add("cell-img");
+    img.setAttribute(
+      "src",
+      `./assets/${cellAttribute.model}/${cellVariant.name}.png`
+    );
+    img.setAttribute("alt", cellVariant.name);
+    cell.appendChild(img);
+  } else {
+    cell.textContent = cellVariant.name;
+  }
+};
+
 const renderBoard = () => {
   const gameState = getGameState();
 
   // Render values in the external frame
-  extRow0.textContent = gameState.row0.variant.name;
-  extRow1.textContent = gameState.row1.variant.name;
-  extRow2.textContent = gameState.row2.variant.name;
-  extCol0.textContent = gameState.col0.variant.name;
-  extCol1.textContent = gameState.col1.variant.name;
-  extCol2.textContent = gameState.col2.variant.name;
+  renderFrameCell(gameState, extRow0, "row0");
+  renderFrameCell(gameState, extRow1, "row1");
+  renderFrameCell(gameState, extRow2, "row2");
+  renderFrameCell(gameState, extCol0, "col0");
+  renderFrameCell(gameState, extCol1, "col1");
+  renderFrameCell(gameState, extCol2, "col2");
   psCell.textContent = `Punti vita: ${gameState.ps}`;
   scoreCell.textContent = `Punti: ${gameState.score}`;
   if (gameState.ps === 0) {

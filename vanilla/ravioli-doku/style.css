@@ -225,6 +225,11 @@ footer {
   aspect-ratio: 1;
 }
 
+.cell-img {
+  max-width: 90px;
+  max-width: 90px;
+}
+
 .cell-sprite {
   max-width: 100px;
   max-width: 100px;
@@ -237,6 +242,11 @@ footer {
 
   .inside {
     padding: 0.2rem;
+  }
+
+  .cell-img {
+    max-width: 35px;
+    max-width: 35px;
   }
 
   .cell-sprite {
