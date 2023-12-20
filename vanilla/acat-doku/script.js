@@ -72,10 +72,10 @@ const engagements = [
 ];
 
 const seasons = [
-  { id: 1, name: "Nato in Primavera" },
-  { id: 2, name: "Nato in Estate" },
-  { id: 3, name: "Nato in Autunno" },
-  { id: 4, name: "Nato in Inverno" },
+  { id: 1, name: "Nat* in Primavera" },
+  { id: 2, name: "Nat* in Estate" },
+  { id: 3, name: "Nat* in Autunno" },
+  { id: 4, name: "Nat* in Inverno" },
 ];
 
 const zodiacs = [
@@ -199,8 +199,8 @@ const friends = [
     hair: 2,
     house: 2,
     engagement: 1,
-    season: 2,
-    zodiac: 8,
+    season: 1,
+    zodiac: 2,
   },
   {
     id: 10,
@@ -211,7 +211,7 @@ const friends = [
     hair: 2,
     house: 2,
     engagement: 2,
-    season: 4,
+    season: 3,
     zodiac: 11,
   },
   {
@@ -219,7 +219,7 @@ const friends = [
     name: "Ubi",
     type1: 1,
     type2: 2,
-    generation: 2,
+    generation: 1,
     hair: 3,
     house: 1,
     engagement: 1,
@@ -279,7 +279,7 @@ const friends = [
     name: "Noe",
     type1: 4,
     type2: 7,
-    generation: 2,
+    generation: 3,
     hair: 2,
     house: 1,
     engagement: 2,
@@ -339,7 +339,7 @@ const friends = [
     name: "Claudia",
     type1: 1,
     type2: 6,
-    generation: 4,
+    generation: 1,
     hair: 1,
     house: 2,
     engagement: 1,
@@ -1128,7 +1128,7 @@ const onFormSubmit = (e) => {
   closeFormModal();
 };
 
-const makeLogoSayMiao = () => {
+const makeLogoSay = () => {
   extCornerLeft.addEventListener("click", () => {
     alert("MIAO!");
   });
@@ -1139,7 +1139,7 @@ const makeLogoSayMiao = () => {
 newGame();
 renderBoard();
 createFriendList();
-makeLogoSayMiao();
+makeLogoSay();
 
 // Add event listener to info button
 infoBtn.addEventListener("click", openInfoModal);

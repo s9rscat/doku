@@ -33,6 +33,8 @@ const friendAttributes = [
   { id: 8, name: "pep", model: "peps" },
   { id: 9, name: "season", model: "seasons" },
   { id: 10, name: "zodiac", model: "zodiacs" },
+  { id: 11, name: "erasmus", model: "erasmus" },
+  { id: 12, name: "glass", model: "glasses" },
 ];
 
 const genders = [
@@ -72,13 +74,12 @@ const zanco = [
 ];
 
 const origins = [
-  { id: 1, name: "Origine milanese" },
-  { id: 2, name: "Origine brianzola" },
-  { id: 3, name: "Origine comasca" },
-  { id: 4, name: "Origine bergamasca" },
-  { id: 5, name: "Origine bresciana" },
-  { id: 6, name: "Origine padania sud" },
-  { id: 7, name: "Origine extra-lombarda" },
+  { id: 1, name: "Origini MI" },
+  { id: 2, name: "Origini MB" },
+  { id: 3, name: "Origini CO/LC/VA" },
+  { id: 4, name: "Origini BG/BR" },
+  { id: 5, name: "Origini LO/PV" },
+  { id: 6, name: "Origini extra-lombarda" },
 ];
 
 const peps = [
@@ -91,10 +92,10 @@ const peps = [
 ];
 
 const seasons = [
-  { id: 1, name: "Nato in Primavera" },
-  { id: 2, name: "Nato in Estate" },
-  { id: 3, name: "Nato in Autunno" },
-  { id: 4, name: "Nato in Inverno" },
+  { id: 1, name: "Nat* in Primavera" },
+  { id: 2, name: "Nat* in Estate" },
+  { id: 3, name: "Nat* in Autunno" },
+  { id: 4, name: "Nat* in Inverno" },
 ];
 
 const zodiacs = [
@@ -112,6 +113,16 @@ const zodiacs = [
   { id: 12, name: "Capricorn" },
 ];
 
+const erasmus = [
+  { id: 1, name: "Ha fatto l'erasmus" },
+  { id: 2, name: "Non ha fatto l'erasmus" },
+];
+
+const glasses = [
+  { id: 1, name: "Porta gli occhiali" },
+  { id: 2, name: "Non porta gli occhiali" },
+];
+
 const friends = [
   {
     id: 1,
@@ -126,6 +137,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 10,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 2,
@@ -140,6 +153,8 @@ const friends = [
     peps: 1,
     season: 3,
     zodiac: 9,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 3,
@@ -154,6 +169,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 10,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 4,
@@ -166,8 +183,10 @@ const friends = [
     zanco: 1,
     origin: 3,
     peps: 1,
-    season: 3,
+    season: 4,
     zodiac: 1,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 5,
@@ -182,6 +201,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 10,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 6,
@@ -196,6 +217,8 @@ const friends = [
     peps: 3,
     season: 2,
     zodiac: 6,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 7,
@@ -208,8 +231,10 @@ const friends = [
     zanco: 2,
     origin: 1,
     peps: 3,
-    season: 1,
-    zodiac: 3,
+    season: 4,
+    zodiac: 2,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 8,
@@ -220,10 +245,12 @@ const friends = [
     degree: 2,
     curriculum: 2,
     zanco: 2,
-    origin: 5,
+    origin: 3,
     peps: 3,
     season: 3,
     zodiac: 9,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 9,
@@ -236,8 +263,10 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 3,
-    season: 3,
-    zodiac: 9,
+    season: 1,
+    zodiac: 5,
+    erasmus: 1,
+    glass: 1,
   },
   {
     id: 10,
@@ -250,8 +279,10 @@ const friends = [
     zanco: 1,
     origin: 1,
     peps: 3,
-    season: 3,
-    zodiac: 9,
+    season: 4,
+    zodiac: 2,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 11,
@@ -265,7 +296,9 @@ const friends = [
     origin: 1,
     peps: 1,
     season: 3,
-    zodiac: 9,
+    zodiac: 10,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 12,
@@ -280,6 +313,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 11,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 13,
@@ -294,6 +329,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 9,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 14,
@@ -308,6 +345,8 @@ const friends = [
     peps: 3,
     season: 1,
     zodiac: 4,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 15,
@@ -322,6 +361,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 9,
+    erasmus: 1,
+    glass: 1,
   },
   {
     id: 16,
@@ -335,7 +376,9 @@ const friends = [
     origin: 1,
     peps: 3,
     season: 3,
-    zodiac: 9,
+    zodiac: 10,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 17,
@@ -350,6 +393,8 @@ const friends = [
     peps: 3,
     season: 2,
     zodiac: 7,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 18,
@@ -362,8 +407,10 @@ const friends = [
     zanco: 1,
     origin: 2,
     peps: 1,
-    season: 3,
-    zodiac: 9,
+    season: 1,
+    zodiac: 3,
+    erasmus: 1,
+    glass: 1,
   },
   {
     id: 19,
@@ -377,7 +424,9 @@ const friends = [
     origin: 1,
     peps: 3,
     season: 3,
-    zodiac: 9,
+    zodiac: 10,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 19,
@@ -392,6 +441,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 9,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 21,
@@ -402,10 +453,12 @@ const friends = [
     degree: 4,
     curriculum: 3,
     zanco: 2,
-    origin: 6,
+    origin: 5,
     peps: 3,
-    season: 3,
-    zodiac: 9,
+    season: 1,
+    zodiac: 4,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 22,
@@ -418,8 +471,10 @@ const friends = [
     zanco: 2,
     origin: 1,
     peps: 3,
-    season: 3,
-    zodiac: 9,
+    season: 1,
+    zodiac: 2,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 23,
@@ -430,10 +485,12 @@ const friends = [
     degree: 4,
     curriculum: 3,
     zanco: 2,
-    origin: 6,
+    origin: 5,
     peps: 3,
-    season: 3,
-    zodiac: 9,
+    season: 1,
+    zodiac: 5,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 24,
@@ -444,10 +501,188 @@ const friends = [
     degree: 4,
     curriculum: 3,
     zanco: 2,
-    origin: 6,
+    origin: 5,
     peps: 3,
     season: 3,
     zodiac: 9,
+    erasmus: 2,
+    glass: 2,
+  },
+  {
+    id: 25,
+    name: "Anna Cascarano",
+    gender: 1,
+    hair: 2,
+    location: 2,
+    degree: 2,
+    curriculum: 2,
+    zanco: 1,
+    origin: 1,
+    peps: 3,
+    season: 3,
+    zodiac: 9,
+    erasmus: 2,
+    glass: 2,
+  },
+  {
+    id: 26,
+    name: "Simone Maletto",
+    gender: 2,
+    hair: 2,
+    location: 4,
+    degree: 3,
+    curriculum: 1,
+    zanco: 1,
+    origin: 1,
+    peps: 1,
+    season: 2,
+    zodiac: 8,
+    erasmus: 1,
+    glass: 1,
+  },
+  {
+    id: 27,
+    name: "Gianluca Redondi",
+    gender: 2,
+    hair: 3,
+    location: 1,
+    degree: 3,
+    curriculum: 1,
+    zanco: 1,
+    origin: 1,
+    peps: 3,
+    season: 1,
+    zodiac: 5,
+    erasmus: 2,
+    glass: 1,
+  },
+  {
+    id: 28,
+    name: "Giulia Liberatore",
+    gender: 1,
+    hair: 3,
+    location: 1,
+    degree: 4,
+    curriculum: 3,
+    zanco: 2,
+    origin: 5,
+    peps: 3,
+    season: 2,
+    zodiac: 7,
+    erasmus: 2,
+    glass: 2,
+  },
+  {
+    id: 29,
+    name: "Leonardo Bottelli",
+    gender: 2,
+    hair: 2,
+    location: 1,
+    degree: 2,
+    curriculum: 2,
+    zanco: 2,
+    origin: 3,
+    peps: 3,
+    season: 4,
+    zodiac: 1,
+    erasmus: 2,
+    glass: 1,
+  },
+  {
+    id: 30,
+    name: "Aurora Cecco",
+    gender: 1,
+    hair: 1,
+    location: 1,
+    degree: 4,
+    curriculum: 3,
+    zanco: 2,
+    origin: 4,
+    peps: 3,
+    season: 3,
+    zodiac: 10,
+    erasmus: 2,
+    glass: 1,
+  },
+  {
+    id: 31,
+    name: "Giacomo Perna",
+    gender: 2,
+    hair: 2,
+    location: 1,
+    degree: 2,
+    curriculum: 2,
+    zanco: 2,
+    origin: 2,
+    peps: 3,
+    season: 1,
+    zodiac: 5,
+    erasmus: 2,
+    glass: 1,
+  },
+  {
+    id: 32,
+    name: "Giulio Colombo",
+    gender: 2,
+    hair: 2,
+    location: 1,
+    degree: 3,
+    curriculum: 1,
+    zanco: 1,
+    origin: 4,
+    peps: 3,
+    season: 2,
+    zodiac: 8,
+    erasmus: 2,
+    glass: 1,
+  },
+  {
+    id: 33,
+    name: "Lara Colombo",
+    gender: 1,
+    hair: 2,
+    location: 1,
+    degree: 4,
+    curriculum: 3,
+    zanco: 2,
+    origin: 2,
+    peps: 3,
+    season: 3,
+    zodiac: 11,
+    erasmus: 2,
+    glass: 1,
+  },
+  {
+    id: 34,
+    name: "Alessandro Canzoni",
+    gender: 2,
+    hair: 3,
+    location: 1,
+    degree: 2,
+    curriculum: 1,
+    zanco: 1,
+    origin: 6,
+    peps: 3,
+    season: 4,
+    zodiac: 12,
+    erasmus: 2,
+    glass: 2,
+  },
+  {
+    id: 35,
+    name: "Silvia Muraca",
+    gender: 1,
+    hair: 1,
+    location: 1,
+    degree: 2,
+    curriculum: 2,
+    zanco: 2,
+    origin: 3,
+    peps: 3,
+    season: 4,
+    zodiac: 12,
+    erasmus: 2,
+    glass: 2,
   },
 ];
 
@@ -463,6 +698,8 @@ const data = {
   peps,
   seasons,
   zodiacs,
+  erasmus,
+  glasses,
   friends,
 };
 
@@ -525,6 +762,16 @@ function getZodiacById(id) {
   return zodiacs.find((zodiac) => zodiac.id === id);
 }
 
+// Erasmus repository
+function getErasmusById(id) {
+  return erasmus.find((erasmus) => erasmus.id === id);
+}
+
+// Glass repository
+function getGlassById(id) {
+  return glasses.find((glass) => glass.id === id);
+}
+
 // Mappers
 const mapAttributesOnRepo = {
   1: getGenderById,
@@ -537,6 +784,8 @@ const mapAttributesOnRepo = {
   8: getPepById,
   9: getSeasonById,
   10: getZodiacById,
+  11: getErasmusById,
+  12: getGlassById,
 };
 
 // States creation
@@ -1088,7 +1337,7 @@ const onFormSubmit = (e) => {
   closeFormModal();
 };
 
-const makeLogoSayFormula = () => {
+const makeLogoSay = () => {
   extCornerLeft.addEventListener("click", () => {
     alert("exp(iπ) + 1 = 0");
   });
@@ -1099,7 +1348,7 @@ const makeLogoSayFormula = () => {
 newGame();
 renderBoard();
 createFriendList();
-makeLogoSayFormula();
+makeLogoSay();
 
 // Add event listener to info button
 infoBtn.addEventListener("click", openInfoModal);
