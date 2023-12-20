@@ -712,6 +712,12 @@ const renderFrameCell = (gameState, cell, cellName) => {
   const cellAttribute = gameState[cellName].attribute;
   const cellVariant = gameState[cellName].variant;
 
+  // Clear everything in the cell
+  cell.textContent = "";
+  while (cell.lastElementChild) {
+    cell.removeChild(cell.lastElementChild);
+  }
+
   if (cellAttribute.hasImg) {
     const img = document.createElement("img");
     img.classList.add("cell-img");
