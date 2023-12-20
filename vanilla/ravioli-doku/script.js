@@ -73,10 +73,10 @@ const engagements = [
 ];
 
 const seasons = [
-  { id: 1, name: "Nato in Primavera" },
-  { id: 2, name: "Nato in Estate" },
-  { id: 3, name: "Nato in Autunno" },
-  { id: 4, name: "Nato in Inverno" },
+  { id: 1, name: "Nat* in Primavera" },
+  { id: 2, name: "Nat* in Estate" },
+  { id: 3, name: "Nat* in Autunno" },
+  { id: 4, name: "Nat* in Inverno" },
 ];
 
 const zodiacs = [
