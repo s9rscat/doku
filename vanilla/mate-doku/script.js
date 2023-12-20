@@ -58,14 +58,14 @@ const degrees = [
 const locations = [
   { id: 1, name: "Vive in Italia" },
   { id: 2, name: "Vive in Europa (non UE)" },
-  { id: 3, name: "Vive in Europa (UE, non Italia)" },
+  { id: 3, name: "Vive in Europa (UE, no Italia)" },
   { id: 4, name: "Vive in paese extra-europeo" },
 ];
 
 const curricula = [
   { id: 1, name: "Curriculum generale" },
   { id: 2, name: "Curriculum applicativo" },
-  { id: 3, name: "Non ha frequentato in magistrale" },
+  { id: 3, name: "Non frequentato in magistrale" },
 ];
 
 const zanco = [
@@ -83,12 +83,9 @@ const origins = [
 ];
 
 const peps = [
-  { id: 1, name: "E' stato candidat* di Lista ideale" },
-  { id: 2, name: "E' stato candidat* di Obiettivo studenti" },
-  {
-    id: 3,
-    name: "Non espost* politicamente (non candidat* in lista di ateneo)",
-  },
+  { id: 1, name: "Lista ideale" },
+  { id: 2, name: "Obiettivo studenti" },
+  { id: 3, name: "Non espost* politicamente" },
 ];
 
 const seasons = [
