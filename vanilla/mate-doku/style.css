@@ -412,11 +412,7 @@ It also holds all the modals.
 }
 
 .info-modal {
-  color: var(--light-color);
-  background-image: url("./assets/mod.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+  color: var(--medium-dark-color);
 }
 
 .game-over-modal {
