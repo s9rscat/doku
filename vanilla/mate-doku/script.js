@@ -33,6 +33,8 @@ const friendAttributes = [
   { id: 8, name: "pep", model: "peps" },
   { id: 9, name: "season", model: "seasons" },
   { id: 10, name: "zodiac", model: "zodiacs" },
+  { id: 11, name: "erasmus", model: "erasmus" },
+  { id: 12, name: "glass", model: "glasses" },
 ];
 
 const genders = [
@@ -111,6 +113,16 @@ const zodiacs = [
   { id: 12, name: "Capricorn" },
 ];
 
+const erasmus = [
+  { id: 1, name: "Ha fatto l'erasmus" },
+  { id: 2, name: "Non ha fatto l'erasmus" },
+];
+
+const glasses = [
+  { id: 1, name: "Porta gli occhiali" },
+  { id: 2, name: "Non porta gli occhiali" },
+];
+
 const friends = [
   {
     id: 1,
@@ -125,6 +137,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 10,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 2,
@@ -139,6 +153,8 @@ const friends = [
     peps: 1,
     season: 3,
     zodiac: 9,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 3,
@@ -153,6 +169,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 10,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 4,
@@ -167,6 +185,8 @@ const friends = [
     peps: 1,
     season: 4,
     zodiac: 1,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 5,
@@ -181,6 +201,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 10,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 6,
@@ -195,6 +217,8 @@ const friends = [
     peps: 3,
     season: 2,
     zodiac: 6,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 7,
@@ -209,6 +233,8 @@ const friends = [
     peps: 3,
     season: 4,
     zodiac: 2,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 8,
@@ -223,6 +249,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 9,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 9,
@@ -237,6 +265,8 @@ const friends = [
     peps: 3,
     season: 1,
     zodiac: 5,
+    erasmus: 1,
+    glass: 1,
   },
   {
     id: 10,
@@ -251,6 +281,8 @@ const friends = [
     peps: 3,
     season: 4,
     zodiac: 2,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 11,
@@ -265,6 +297,8 @@ const friends = [
     peps: 1,
     season: 3,
     zodiac: 10,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 12,
@@ -279,6 +313,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 11,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 13,
@@ -293,6 +329,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 9,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 14,
@@ -307,6 +345,8 @@ const friends = [
     peps: 3,
     season: 1,
     zodiac: 4,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 15,
@@ -321,6 +361,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 9,
+    erasmus: 1,
+    glass: 1,
   },
   {
     id: 16,
@@ -335,6 +377,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 10,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 17,
@@ -349,6 +393,8 @@ const friends = [
     peps: 3,
     season: 2,
     zodiac: 7,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 18,
@@ -363,6 +409,8 @@ const friends = [
     peps: 1,
     season: 1,
     zodiac: 3,
+    erasmus: 1,
+    glass: 1,
   },
   {
     id: 19,
@@ -377,6 +425,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 10,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 19,
@@ -391,6 +441,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 9,
+    erasmus: 1,
+    glass: 2,
   },
   {
     id: 21,
@@ -405,6 +457,8 @@ const friends = [
     peps: 3,
     season: 1,
     zodiac: 4,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 22,
@@ -419,6 +473,8 @@ const friends = [
     peps: 3,
     season: 1,
     zodiac: 2,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 23,
@@ -433,6 +489,8 @@ const friends = [
     peps: 3,
     season: 1,
     zodiac: 5,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 24,
@@ -447,6 +505,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 9,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 25,
@@ -461,6 +521,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 9,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 26,
@@ -475,6 +537,8 @@ const friends = [
     peps: 1,
     season: 2,
     zodiac: 8,
+    erasmus: 1,
+    glass: 1,
   },
   {
     id: 27,
@@ -489,6 +553,8 @@ const friends = [
     peps: 3,
     season: 1,
     zodiac: 5,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 28,
@@ -503,6 +569,8 @@ const friends = [
     peps: 3,
     season: 2,
     zodiac: 7,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 29,
@@ -517,6 +585,8 @@ const friends = [
     peps: 3,
     season: 4,
     zodiac: 1,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 30,
@@ -531,6 +601,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 10,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 31,
@@ -545,6 +617,8 @@ const friends = [
     peps: 3,
     season: 1,
     zodiac: 5,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 32,
@@ -559,6 +633,8 @@ const friends = [
     peps: 3,
     season: 2,
     zodiac: 8,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 33,
@@ -573,6 +649,8 @@ const friends = [
     peps: 3,
     season: 3,
     zodiac: 11,
+    erasmus: 2,
+    glass: 1,
   },
   {
     id: 34,
@@ -587,6 +665,8 @@ const friends = [
     peps: 3,
     season: 4,
     zodiac: 12,
+    erasmus: 2,
+    glass: 2,
   },
   {
     id: 35,
@@ -601,6 +681,8 @@ const friends = [
     peps: 3,
     season: 4,
     zodiac: 12,
+    erasmus: 2,
+    glass: 2,
   },
 ];
 
@@ -616,6 +698,8 @@ const data = {
   peps,
   seasons,
   zodiacs,
+  erasmus,
+  glasses,
   friends,
 };
 
@@ -678,6 +762,16 @@ function getZodiacById(id) {
   return zodiacs.find((zodiac) => zodiac.id === id);
 }
 
+// Erasmus repository
+function getErasmusById(id) {
+  return erasmus.find((erasmus) => erasmus.id === id);
+}
+
+// Glass repository
+function getGlassById(id) {
+  return glasses.find((glass) => glass.id === id);
+}
+
 // Mappers
 const mapAttributesOnRepo = {
   1: getGenderById,
@@ -690,6 +784,8 @@ const mapAttributesOnRepo = {
   8: getPepById,
   9: getSeasonById,
   10: getZodiacById,
+  11: getErasmusById,
+  12: getGlassById,
 };
 
 // States creation
