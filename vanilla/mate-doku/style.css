@@ -222,6 +222,16 @@ It also holds all the modals.
   aspect-ratio: 1;
 }
 
+.cell-img {
+  max-width: 90px;
+  max-width: 90px;
+}
+
+.cell-sprite {
+  max-width: 100px;
+  max-width: 100px;
+}
+
 @media (max-width: 768px) {
   .frame {
     padding: 0.5rem;
@@ -229,6 +239,16 @@ It also holds all the modals.
 
   .inside {
     padding: 0.5rem;
+  }
+
+  .cell-img {
+    max-width: 35px;
+    max-width: 35px;
+  }
+
+  .cell-sprite {
+    max-width: 40px;
+    max-width: 40px;
   }
 }
 
