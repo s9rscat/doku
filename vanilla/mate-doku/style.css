@@ -430,7 +430,7 @@ It also holds all the modals.
 
 .win-modal {
   font-weight: bolder;
-  color: var(--light-color);
+  color: white;
   text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000,
     -1px -1px #000, 1px -1px #000, -1px 1px #000;
   text-align: center;
