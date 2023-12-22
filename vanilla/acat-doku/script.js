@@ -857,6 +857,9 @@ const form = document.querySelector("#form");
 const list = document.querySelector("#list");
 const listInput = document.querySelector("#input");
 const hiddenInputWithCellId = document.querySelector("#cell-id-input");
+const typeBtn = document.querySelector("#type-btn");
+const typeModal = document.querySelector("#type-modal");
+const btnCloseTypeModal = document.querySelector("#close-type-modal");
 const infoBtn = document.querySelector("#info-btn");
 const infoModal = document.querySelector("#info-modal");
 const btnCloseInfoModal = document.querySelector("#close-info-modal");
@@ -1054,6 +1057,16 @@ const closeInfoModal = function () {
   overlay.classList.add("hidden");
 };
 
+const openTypeModal = function () {
+  typeModal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+};
+
+const closeTypeModal = function () {
+  typeModal.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
 const openWinModal = function () {
   winModal.classList.remove("hidden");
   overlay.classList.remove("hidden");
@@ -1149,6 +1162,9 @@ makeLogoSay();
 // Add event listener to info button
 infoBtn.addEventListener("click", openInfoModal);
 
+// Add event listener to type button
+typeBtn.addEventListener("click", openTypeModal);
+
 // Logic for closing the modals
 btnCloseFormModal.addEventListener("click", closeFormModal);
 overlay.addEventListener("click", closeFormModal);
@@ -1162,6 +1178,13 @@ overlay.addEventListener("click", closeInfoModal);
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && !infoModal.classList.contains("hidden")) {
     closeInfoModal();
+  }
+});
+btnCloseTypeModal.addEventListener("click", closeTypeModal);
+overlay.addEventListener("click", closeTypeModal);
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && !typeModal.classList.contains("hidden")) {
+    closeTypeModal();
   }
 });
 btnCloseGameOverModal.addEventListener("click", closeGameOverModal);

@@ -84,10 +84,25 @@ footer {
   aspect-ratio: 10/1;
 }
 
+.header-type-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: last baseline;
+  align-items: center;
+}
+
+.header-type {
+  font-size: 2.5rem;
+  background-color: var(--dark-color);
+  border: none;
+  margin: 6px;
+}
+
 .header-info {
   font-size: 2.5rem;
   background-color: var(--dark-color);
   border: none;
+  margin: 6px;
 }
 
 @media (max-width: 768px) {
@@ -432,7 +447,7 @@ footer {
   text-align: left;
 }
 
-.info-modal {
+.info-modal .type-modal {
   color: var(--medium-dark-color);
 }
 
