@@ -41,7 +41,7 @@ const types = [
   { id: 5, name: "Buio" },
   { id: 6, name: "Elettro" },
   { id: 7, name: "Psico" },
-  { id: 8, name: "Accioaio" },
+  { id: 8, name: "Acciaio" },
 ];
 
 const generations = [
@@ -466,7 +466,7 @@ const friends = [
     house: 1,
     engagement: 2,
     season: 1,
-    zodiac: 3,
+    zodiac: 3,Tullio
   },
   {
     id: 32,
