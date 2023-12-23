@@ -576,6 +576,12 @@ function getFrameAttributes() {
   // Get 3 random attributes for the external row
   for (let r = 0; r < 3; r++) {
     if (r < 2) {
+      const unusedAttributes = possibleAttributes.filter(
+        (attribute) =>
+          !usedAttributeIds.some(
+            (usedAttributeId) => usedAttributeId === attribute.id
+          )
+      );
       const random = randomIntFromInterval(0, numPossibleAttributes - 1);
       rowAttributes.push(possibleAttributes[random]);
 
@@ -593,6 +599,9 @@ function getFrameAttributes() {
       // Choose a random attribute from the remaining attributes
       const random = randomIntFromInterval(0, unusedAttributes.length - 1);
       rowAttributes.push(unusedAttributes[random]);
+
+      // Push the used attribute in usedAttributes
+      usedAttributeIds.push(possibleAttributes[random].id);
     }
   }
 
