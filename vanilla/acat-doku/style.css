@@ -87,8 +87,6 @@ footer {
 .header-type-info {
   display: flex;
   flex-direction: row;
-  justify-content: last baseline;
-  align-items: center;
 }
 
 .header-type {
