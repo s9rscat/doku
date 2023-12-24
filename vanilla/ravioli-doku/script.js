@@ -220,7 +220,7 @@ const friends = [
   },
   {
     id: 13,
-    name: "Ale B",
+    name: "Ale Bo",
     gender: 1,
     hair: 1,
     generation: 5,
@@ -292,8 +292,8 @@ const friends = [
     generation: 4,
     house: 1,
     engagement: 1,
-    season: 1,
-    zodiac: 3,
+    season: 2,
+    zodiac: 6,
   },
   {
     id: 20,
@@ -319,14 +319,14 @@ const friends = [
   },
   {
     id: 22,
-    name: "Ale",
+    name: "Ale Bi",
     gender: 1,
     hair: 2,
     generation: 7,
     house: 2,
     engagement: 1,
-    season: 1,
-    zodiac: 3,
+    season: 2,
+    zodiac: 8,
   },
 ];
 
