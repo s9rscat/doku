@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="images--wrapper">
+    <app-image imgName="logo.png" class="images--logo"></app-image>
+    <app-image imgName="write.png" class="images--title"></app-image>
+  </div>
+  <div class="buttons--wrapper">
+    <app-icon-button
+      icon="info"
+      (onClickEvent)="handleMenuButtonClick()"
+    ></app-icon-button>
+    <app-icon-button
+      icon="whatshot"
+      (onClickEvent)="handleMenuButtonClick()"
+    ></app-icon-button>
+  </div>
+</div>

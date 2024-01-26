@@ -1,0 +1,29 @@
+@use "../../../styles/modules" as m;
+
+.wrapper {
+  background-color: m.$dark-color;
+  padding: m.rem(16px) m.rem(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: m.$header-height;
+}
+
+.images {
+  &--wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &--logo {
+  }
+  &--title {
+    ::ng-deep {
+      img.content {
+        height: 50%;
+        aspect-ratio: 10/1;
+      }
+    }
+  }
+}
