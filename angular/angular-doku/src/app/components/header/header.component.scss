@@ -1,12 +1,12 @@
 @use "../../../styles/modules" as m;
 
 .wrapper {
+  height: m.$header-height;
   background-color: m.$dark-color;
   padding: m.rem(16px) m.rem(8px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: m.$header-height;
 }
 
 .images {
@@ -17,13 +17,23 @@
   }
 
   &--logo {
+    height: 100%;
   }
+
   &--title {
-    ::ng-deep {
-      img.content {
-        height: 50%;
-        aspect-ratio: 10/1;
-      }
-    }
+    height: 50%;
+    padding-left: m.rem(16px);
+  }
+}
+
+.buttons {
+  &--wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &--icon {
+    color: m.$light-color;
   }
 }
